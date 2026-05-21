@@ -60,7 +60,7 @@ export default function RentalBusinessV10() {
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}>1</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>감면신청서 및 취득세신고서</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지특법 31조, 31조의3</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://law.go.kr/법령/지방세특례제한법/제31조" target="_blank" rel="noopener noreferrer">지특법 §31</a>, <a href="https://law.go.kr/법령/지방세특례제한법/제31조의3" target="_blank" rel="noopener noreferrer">§31의3</a></td>
       </tr>
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}>2</td>
@@ -79,7 +79,7 @@ export default function RentalBusinessV10() {
       </tr>
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}>5</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>주택취득 상세명세서, 가족관계증명</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>주택취득 상세명세서, 가족관계증명서</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', color: '#cf1322'}}>중과세율 적용 대상</td>
       </tr>
       </tbody>
@@ -93,8 +93,8 @@ export default function RentalBusinessV10() {
       <thead>
       <tr style={{backgroundColor: '#f0f0f0'}}>
       <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}} colSpan={2}>구분</th>
-      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>지특법 §31 (공공임대주택 등)</th>
-      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#e6f7ff'}}>지특법 §31의3 (장기일반민간임대주택 등)</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '42%'}}><a href="https://law.go.kr/법령/지방세특례제한법/제31조" target="_blank" rel="noopener noreferrer">지특법 §31</a> (공공임대주택 등)</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#e6f7ff', width: '42%'}}><a href="https://law.go.kr/법령/지방세특례제한법/제31조의3" target="_blank" rel="noopener noreferrer">지특법 §31의3</a> (장기일반민간임대주택 등)</th>
       </tr>
       </thead>
       <tbody>
@@ -206,16 +206,16 @@ export default function RentalBusinessV10() {
       <thead>
       <tr style={{backgroundColor: '#f0f0f0'}}>
       <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}} colSpan={2}>구분</th>
-      <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}} colSpan={3}>지특법 §31 (공공임대주택 등)</th>
-      <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold', backgroundColor: '#e6f7ff'}} colSpan={3}>지특법 §31의3 (장기일반민간임대주택 등)</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}} colSpan={3}><a href="https://law.go.kr/법령/지방세특례제한법/제31조" target="_blank" rel="noopener noreferrer">지특법 §31</a> (공공임대주택 등)</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold', backgroundColor: '#e6f7ff'}} colSpan={3}><a href="https://law.go.kr/법령/지방세특례제한법/제31조의3" target="_blank" rel="noopener noreferrer">지특법 §31의3</a> (장기일반민간임대주택 등)</th>
       </tr>
       <tr style={{backgroundColor: '#fafafa'}}>
       <th style={{border: '1px solid #d9d9d9', padding: '6px'}} colSpan={2}>감면대상</th>
       <td style={{border: '1px solid #d9d9d9', padding: '6px'}} colSpan={3}>
-      <p>①임대형기숙사 ②공동주택(2세대↑) ③오피스텔(2세대↑) ④건축중인토지</p>
+      <p>①임대형기숙사<br/>②공동주택(2세대↑)<br/>③오피스텔(2세대↑)<br/>④건축중인토지</p>
       </td>
       <td style={{border: '1px solid #d9d9d9', padding: '6px'}} colSpan={3}>
-      <p>①임대형기숙사 ②다가구주택★ ③공동주택(2세대↑) ④오피스텔(2세대↑) ⑤건축중인토지</p>
+      <p>①임대형기숙사<br/>②다가구주택★(40㎡↓ 전 호수)<br/>③공동주택(2세대↑)<br/>④오피스텔(2세대↑)<br/>⑤건축중인토지</p>
       </td>
       </tr>
       <tr style={{backgroundColor: '#f0f0f0'}}>
@@ -258,7 +258,7 @@ export default function RentalBusinessV10() {
       <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center', color:'#cf1322'}}>과세<br/><span style={{fontSize:'11px'}}>(§112 미포함)</span></td>
       <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center'}}>과세</td>
       </tr>
-      <tr style={{backgroundColor: '#fff2f0'}}>
+      <tr className="bg-red-50 dark:bg-red-900/20">
       <td style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold', color: '#cf1322'}} colSpan={2}>감면제외</td>
       <td style={{border: '1px solid #d9d9d9', padding: '6px', fontSize: 'var(--content-font-size, 13px)'}} colSpan={6}>
       - 공동주택: 시가표준액 3억(수도권 6억) 초과 (공공건설임대주택의 경우 9억)<br/>
