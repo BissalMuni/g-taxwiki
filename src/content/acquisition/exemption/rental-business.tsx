@@ -288,7 +288,7 @@ export default function RentalBusinessV10() {
 
         <Insight>
 
-        <p><strong>다가구주택 감면 범위</strong> (지특법 §31의3)</p>
+        <p><strong>다가구주택 감면 범위</strong> (<a href="https://law.go.kr/법령/지방세특례제한법시행령/제13조의2" target="_blank" rel="noopener noreferrer">지특법 시행령 §13의2②</a>)</p>
         <ul className="list-disc pl-6 my-4 space-y-1">
           <li>모든 호수의 전용면적(40㎡ 이하)이 <strong>건축물대장에 기재</strong>되어 있는 경우만 감면</li>
           <li>소유자 실제 거주 호수는 <strong>제외</strong> (재산세만 감면)</li>
@@ -306,9 +306,13 @@ export default function RentalBusinessV10() {
 
           <Insight>
 
-          <p><strong>이자상당액 추징</strong> (지특법 §178②, 영 §123의2)</p>
+          <p><strong>이자상당액 추징</strong> (<a href="https://law.go.kr/법령/지방세특례제한법/제178조" target="_blank" rel="noopener noreferrer">지특법 §178②</a>, <a href="https://law.go.kr/법령/지방세특례제한법시행령/제123조의2" target="_blank" rel="noopener noreferrer">영 §123의2</a>)</p>
+
+          <p>임대주택을 의무임대기간 중에 매각하거나 임대등록을 말소하면 감면받았던 취득세를 추징한다. 이때 신고 시점에 따라 납부 부담이 달라진다.</p>
 
           <ul className="list-disc pl-6 my-4 space-y-1">
+            <li><strong>60일 이내 자진신고</strong>: 추징사유 발생일부터 60일 이내에 신고·납부하면 <strong>이자상당액만</strong> 납부 (납부지연가산세 면제)</li>
+            <li><strong>60일 경과 후 미신고</strong>: 무신고·과소신고 가산세 및 납부지연가산세까지 추가하여 <strong>보통징수</strong></li>
             <li>2020년 1월 1일 취득분부터는 <strong>60일 이내 신고해도</strong> 이자상당액 발생</li>
             <li><strong>가산기간</strong>: 취득세 납부기한(등기일)의 다음날 ~ 추징사유 발생일</li>
             <li><strong>납부지연가산 이자율</strong>: 1일 10만분의 22 (22.6.7. 이전: 1일 10만분의 25)</li>
