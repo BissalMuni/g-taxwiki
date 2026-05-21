@@ -116,7 +116,7 @@ export default function RentalBusinessV10() {
       <strong>공공주택사업자</strong> (공공주택특별법 §2)
       </td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontSize: 'var(--content-font-size, 13px)'}}>
-      <strong>임대사업자</strong> (민특법 §5 등록)<br/>
+      <strong>임대사업자</strong> (<a href="https://law.go.kr/법령/민간임대주택에관한특별법/제5조" target="_blank" rel="noopener noreferrer">민특법 §5</a> 등록)<br/>
       → 공공지원민간임대주택(민특법 §2제4호) 또는 장기일반민간임대주택(§2제5호)
       </td>
       </tr>
