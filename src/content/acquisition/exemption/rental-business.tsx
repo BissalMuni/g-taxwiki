@@ -97,6 +97,8 @@ export default function RentalBusinessV10() {
       </tbody>
       </table>
 
+      </CalcBox>
+
       <hr className="my-6" />
 
       <CalcBox title="■ 취득세 감면" id="취득세감면">
