@@ -38,7 +38,7 @@
 ## 프로젝트 구조
 
 ```
-gangubuy-tax-new/
+g-taxwiki/
 ├── app/                          # Next.js App Router
 │   ├── layout.tsx                # Root layout (헤더)
 │   ├── page.tsx                  # 홈페이지

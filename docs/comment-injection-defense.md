@@ -155,10 +155,10 @@ scripts/
 
 | 단계 | 상태 | 비고 |
 |---|---|---|
-| ① 입력단 | ✅ **운영 적용 완료** | 2026-05-08 — 두 프로젝트(gangubuy-tax-new, math) 마이그레이션·코드 배포 완료 |
+| ① 입력단 | ✅ **운영 적용 완료** | 2026-05-08 — 두 프로젝트(g-taxwiki, math) 마이그레이션·코드 배포 완료 |
 | ② 큐 게이트 | ⬜ 미착수 | |
 | ③ LLM 호출단 | ⬜ 미착수 | ②의 Bash 제거가 선행되어야 의미 있음 |
-| ④ 출력 검증단 | ✅ **운영 적용 완료** | 2026-05-08 — 두 프로젝트(gangubuy-tax-new, math) push 완료 |
+| ④ 출력 검증단 | ✅ **운영 적용 완료** | 2026-05-08 — 두 프로젝트(g-taxwiki, math) push 완료 |
 | ⑤ 커밋·배포단 | ⬜ 미착수 | |
 
 ### ① 입력단 — 완료 내역 (2026-05-08)
@@ -220,7 +220,7 @@ scripts/
 | 위험 패턴 | `dangerouslySetInnerHTML`, `eval(`, `new Function`, `<script`, `import.meta`, `__proto__` | XSS·코드 인젝션 |
 
 **대기 작업**
-- ~~변경사항 commit & push~~ ✅ 완료 (gangubuy-tax-new: 7a7ab36, math: 523cabf)
+- ~~변경사항 commit & push~~ ✅ 완료 (g-taxwiki: 7a7ab36, math: 523cabf)
 - ~~자매 프로젝트 math 에도 동일 적용~~ ✅ 완료
 - 운영 중 false negative/positive 발견 시 `DANGEROUS_PATTERNS` / 임계값 조정 (지속)
 

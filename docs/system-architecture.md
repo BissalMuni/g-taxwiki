@@ -253,4 +253,4 @@ pnpm inbox:scan            # inbox만 처리
 
 ---
 
-**강구바이세무 (gangubuy-tax-new)** · 4-Tier Tax Information System
+**강구바이세무 (g-taxwiki)** · 4-Tier Tax Information System
