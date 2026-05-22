@@ -1,35 +1,74 @@
 "use client";
 
 import { Suspense, useRef } from "react";
+import Link from "next/link";
 import { AutoSectionComment } from "@/components/feedback/auto-section-comment";
 import { SectionComment } from "@/components/feedback/section-comment";
+import { RecordView } from "@/components/content/record-view";
 import { FloatingSectionNav } from "@/components/mdx/FloatingSectionNav";
 import { getContentComponent } from "@/map";
 import type { Book, TreeNode } from "@/book";
+
+/** 목차 경로 항목 */
+interface Crumb {
+  title: string;
+  href: string;
+}
 
 /** 소단원 콘텐츠 표시 + 모든 section h2/h3 옆에 의견 버튼 자동 주입 */
 export function TopicContent({
   node,
   contentPath,
   book,
+  breadcrumb = [],
 }: {
   node: TreeNode;
   contentPath: string;
   book: Book;
+  breadcrumb?: Crumb[];
 }) {
   const Content = getContentComponent(book, node);
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
-      <div className="flex items-start justify-between gap-4 mb-8">
-        <h1 className="text-2xl font-bold">
-          {node.title}
-          {/* 소목차 전체에 대한 의견 버튼 */}
-          <span className="ml-2 align-middle">
-            <SectionComment sectionSlug={node.id} sectionTitle={node.title} level="minor" />
-          </span>
-        </h1>
+      {/* 조회수 기록 (통계용) */}
+      <RecordView path={contentPath} bookId={book.id} title={node.title} />
+
+      <div className="mb-8">
+        <div className="flex items-start justify-between gap-4">
+          <h1 className="text-2xl font-bold">
+            {node.title}
+            {/* 소목차 전체에 대한 의견 버튼 */}
+            <span className="ml-2 align-middle">
+              <SectionComment sectionSlug={node.id} sectionTitle={node.title} level="minor" />
+            </span>
+          </h1>
+        </div>
+
+        {/* 목차 경로 (breadcrumb) */}
+        {breadcrumb.length > 0 && (
+          <nav
+            aria-label="목차 경로"
+            className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500 dark:text-gray-400"
+          >
+            {breadcrumb.map((crumb, i) => {
+              const isLast = i === breadcrumb.length - 1;
+              return (
+                <span key={crumb.href} className="flex items-center gap-x-1.5">
+                  {i > 0 && <span className="text-gray-300 dark:text-gray-600">/</span>}
+                  {isLast ? (
+                    <span className="text-gray-700 dark:text-gray-300">{crumb.title}</span>
+                  ) : (
+                    <Link href={crumb.href} className="hover:text-blue-600 hover:underline">
+                      {crumb.title}
+                    </Link>
+                  )}
+                </span>
+              );
+            })}
+          </nav>
+        )}
       </div>
 
       <div ref={containerRef} className="topic-content">

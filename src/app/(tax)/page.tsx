@@ -1,5 +1,11 @@
+import { Suspense } from 'react';
 import Link from 'next/link';
 import { allBooks, getFirstLeafPath } from '@/book';
+import { HomeSearch } from '@/components/search/home-search';
+import { PopularDocs } from '@/components/home/popular-docs';
+
+/** 인기 문서 통계는 1시간마다 갱신 */
+export const revalidate = 3600;
 
 export default function Home() {
   return (
@@ -8,6 +14,7 @@ export default function Home() {
       <p className="text-gray-500 mb-8">
         지방세 정보 안내 사이트입니다. 좌측 메뉴에서 세목을 선택하세요.
       </p>
+      <HomeSearch />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {allBooks.map((book) => {
           const firstLeaf = getFirstLeafPath(book.children);
@@ -27,6 +34,9 @@ export default function Home() {
           );
         })}
       </div>
+      <Suspense fallback={null}>
+        <PopularDocs />
+      </Suspense>
     </div>
   );
 }

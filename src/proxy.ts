@@ -113,6 +113,7 @@ export const config = {
     "/api/admin/:path*",
     "/api/comments/:path*",
     "/api/attachments/:path*",
+    "/api/calendar/:path*",
     "/acquisition/:path*",
     "/corp-acquisition-tax/:path*",
     "/property/:path*",
