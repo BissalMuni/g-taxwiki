@@ -239,44 +239,90 @@ export default function LuxHvy() {
       </CalcBox>
 
       <CalcBox title="■ 실무 체크리스트">
-        <table style={tbl}>
-          <thead>
-            <tr style={{ backgroundColor: "#f0f0f0" }}>
-              <th style={{ ...th, width: "8%" }}>단계</th>
-              <th style={th}>확인 사항</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>1</td>
-              <td style={td}>「식품위생법」 §37 <strong>유흥주점영업 허가</strong> 대상인가?</td>
-            </tr>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>2</td>
-              <td style={td}>공용면적 포함 영업장 면적이 <strong>100㎡ 초과</strong>인가? (전제)</td>
-            </tr>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>3</td>
-              <td style={td}>객석과 구분된 <strong>무도장</strong>이 있는가? (가목 → 해당 시 중과 확정)</td>
-            </tr>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>4</td>
-              <td style={td}><strong>유흥접객원</strong>을 두는가? (나목 ①)</td>
-            </tr>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>5</td>
-              <td style={td}>반영구 구획 객실이 <strong>전용면적 50% 이상 또는 5개 이상</strong>인가? (나목 ②)</td>
-            </tr>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>6</td>
-              <td style={td}>건물 일부 사용 시 <strong>연면적 비율로 부속토지 안분</strong>했는가? (§28⑤ 후단)</td>
-            </tr>
-            <tr>
-              <td style={{ ...tdHead, textAlign: "center" }}>7</td>
-              <td style={td}>경계 불명확 시 <strong>바닥면적 10배</strong>를 부속토지로 적용했는가? (§13⑤ 본문)</td>
-            </tr>
-          </tbody>
-        </table>
+        <SubSection title="● 현장 실사 중점 확인">
+          <p>현장 출장 시 아래 사항을 우선 파악한다.</p>
+          <table style={tbl}>
+            <thead>
+              <tr style={{ backgroundColor: "#f0f0f0" }}>
+                <th style={{ ...th, width: "35%" }}>확인 항목</th>
+                <th style={th}>실무 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={tdHead}>① 룸 개수 파악</td>
+                <td style={td}>
+                  영업장 내 룸(객실) 수를 직접 센다. 비상대피도·사진 등으로 배치를 기록하고
+                  <span style={red}> 5개 이상</span>인지 확인.
+                </td>
+              </tr>
+              <tr>
+                <td style={tdHead}>② 접객원 유무 파악</td>
+                <td style={td}>
+                  유흥접객원을 두는지 확인한다. 임시 고용 포함 — 운영자에게 구두로 확인하거나
+                  간접 정황(영수증·고용내역 등)을 활용.
+                </td>
+              </tr>
+              <tr>
+                <td style={tdHead}>③ 전년 대비 변동 여부 구두 확인</td>
+                <td style={td}>
+                  운영자 또는 직원에게 <strong>작년 이후 룸 수·접객원 운영 여부 등에 변동이 있었는지</strong> 직접
+                  구두로 확인하고 복명서에 기록.
+                </td>
+              </tr>
+              <tr>
+                <td style={tdHead}>④ 경계 모호 공간 — 룸 대용 사용 여부</td>
+                <td style={td}>
+                  룸 개수가 요건(5개)에 애매하게 미달하는 경우,{" "}
+                  <strong>파티션·커튼 등으로 가려놓고 룸처럼 쓰는 공간</strong>이 있는지 현장에서 직접 확인.
+                  반영구적 구획 여부는 실측·사진으로 판단.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </SubSection>
+
+        <SubSection title="● 법령 판정 기준 점검">
+          <table style={tbl}>
+            <thead>
+              <tr style={{ backgroundColor: "#f0f0f0" }}>
+                <th style={{ ...th, width: "8%" }}>단계</th>
+                <th style={th}>확인 사항</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>1</td>
+                <td style={td}>「식품위생법」 §37 <strong>유흥주점영업 허가</strong> 대상인가?</td>
+              </tr>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>2</td>
+                <td style={td}>공용면적 포함 영업장 면적이 <strong>100㎡ 초과</strong>인가? (전제)</td>
+              </tr>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>3</td>
+                <td style={td}>객석과 구분된 <strong>무도장</strong>이 있는가? (가목 → 해당 시 중과 확정)</td>
+              </tr>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>4</td>
+                <td style={td}><strong>유흥접객원</strong>을 두는가? (나목 ①)</td>
+              </tr>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>5</td>
+                <td style={td}>반영구 구획 객실이 <strong>전용면적 50% 이상 또는 5개 이상</strong>인가? (나목 ②)</td>
+              </tr>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>6</td>
+                <td style={td}>건물 일부 사용 시 <strong>연면적 비율로 부속토지 안분</strong>했는가? (§28⑤ 후단)</td>
+              </tr>
+              <tr>
+                <td style={{ ...tdHead, textAlign: "center" }}>7</td>
+                <td style={td}>경계 불명확 시 <strong>바닥면적 10배</strong>를 부속토지로 적용했는가? (§13⑤ 본문)</td>
+              </tr>
+            </tbody>
+          </table>
+        </SubSection>
+
         <Insight>판정은 영업 허가·신고 내용이 아니라 <strong>실제 사용 현황</strong>을 기준으로 한다.</Insight>
       </CalcBox>
     </div>
