@@ -12,10 +12,10 @@ import { CalcBox, SubSection, Insight } from "@/components/content/shared";
  *   source: "acquisitiontax.pdf"
  *   pageRange: [23, 26]
  *   effectiveDate: "2020-08-12"
- *   lastUpdated: "2026-02-08"
+ *   lastUpdated: "2026-05-27"
  *   status: "draft"
- *   lawReference: "지방세법 §15"
- *   tags: ["상속", "세율특례", "1가구1주택", "법정지분", "대습상속", "재협의분할"]
+ *   lawReference: "지방세법 §15, 시행령 §29, 주민등록법 §6"
+ *   tags: ["상속", "세율특례", "1가구1주택", "법정지분", "대습상속", "재협의분할", "외국인", "재외국민", "유권해석"]
  */
 export default function InheritanceFilingV10() {
   return (
@@ -175,6 +175,122 @@ export default function InheritanceFilingV10() {
 
       <p>→ 각각 상속인과 같은 세대별 주민등록표에 기재되어 있지 않아도 <strong>포함하여 판단</strong></p>
       <p>→ <strong>동거인은 제외</strong></p>
+
+      </SubSection>
+
+      </CalcBox>
+
+      <hr className="my-6" />
+
+      <CalcBox title="■ 외국인·재외국민의 1가구1주택 특례 판정" id="3a.-외국인-재외국민-1가구1주택-특례">
+
+      <Insight>
+
+      <p><strong>결론</strong>: 외국인은 특례 <strong>제외 대상이 아니다</strong>. 요건을 충족하면 오히려 특례세율(저율) 적용 대상이 된다.</p>
+      <ul className="list-disc pl-6 my-4 space-y-1">
+        <li>시행령 §29①이 명시적으로 제외하는 것은 <strong>"재외국민"뿐</strong> (주민등록법 §6①3호)</li>
+        <li>"재외국민이 빠지니 외국인도 당연히 빠진다"는 추론은 <strong>성립하지 않는다</strong> — 두 지위는 법적으로 다르다</li>
+        <li>근거: 행정안전부 <strong>부동산세제과-871호(2021.3.26.)</strong> 유권해석</li>
+      </ul>
+
+      </Insight>
+
+      <SubSection title="● 무엇이 제외되는가">
+
+      <p>지방세법 시행령 §29①은 1가구 판정의 상속인 범위에서 <strong>재외국민만</strong> 명시 제외한다.</p>
+      <ul className="list-disc pl-6 my-4 space-y-1">
+        <li><strong>외국인</strong>은 이 제외 문구에 등장하지 않는다.</li>
+        <li><strong>재외국민</strong> = 한국 국적자(외국 거주). 그대로 두면 재외국민용 주민등록으로 특례에 포섭되므로 정책적으로 명시 배제한 것.</li>
+      </ul>
+
+      </SubSection>
+
+      <SubSection title="● 외국인이 1가구 판정에 들어오는 경로">
+
+      <p>주민등록법 §6의 등록 대상은 거주자·거주불명자·재외국민이며, <strong>외국인은 원칙적으로 예외</strong>(주민등록 대상 아님)다. 다만 주민등록법 시행령 §6의2에 따라 아래 요건을 갖추고 신청하면 <strong>세대별 주민등록표에 "기록"</strong>될 수 있다.</p>
+
+      <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
+      <thead>
+      <tr style={{backgroundColor: '#f0f0f0'}}>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '80px'}}>요건</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', textAlign: 'center'}}>①</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>외국인의 체류지가 <strong>세대주의 주민등록지와 일치</strong>할 것</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', textAlign: 'center'}}>②</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>세대주·세대원의 <strong>가족(배우자, 직계혈족)</strong>에 해당할 것</td>
+      </tr>
+      </tbody>
+      </table>
+
+      <p>→ 이 경로로 외국인이 "세대별 주민등록표에 함께 기재된 가족" 지위를 얻는다.</p>
+
+      </SubSection>
+
+      <SubSection title="● 특례 적용 결론 (유권해석 요지)">
+
+      <p>외국인이 피상속인의 <strong>배우자로서 상속인</strong>에 해당하고, 그 외국인과 <strong>세대별 주민등록표에 함께 기재된 가족</strong>으로 구성된 1가구가 상속대상 주택을 제외하고 주택을 소유하지 않으면 <strong>특례세율 적용이 타당</strong>하다.</p>
+
+      <p className="text-sm text-gray-600">입법 취지 — 상속주택 1가구1주택 특례는 가구원 전체가 무주택인 상태에서 가족 사망으로 불가피하게 주택을 취득하는 경우 생계유지를 지원하려는 것이며, 이 취지는 가구원의 국적(한국인/외국인)과 무관하게 작동한다.</p>
+
+      </SubSection>
+
+      <SubSection title="● 재외국민 제외의 정확한 구조">
+
+      <p>재외국민 제외는 "외국에 생활근거를 둔 한국인이 취득했으니 빼겠다"는 <strong>취득자 직접 배제가 아니라</strong>, <strong>1가구 판정 단계에서 빠지는 구조</strong>다.</p>
+      <ul className="list-disc pl-6 my-4 space-y-1">
+        <li>시행령 §29①이 제외하는 대상은 정확히 <strong>"상속인 중 재외국민"</strong> — 즉 재외국민은 이 특례의 1가구를 구성하는 상속인 자체로 인정하지 않는다.</li>
+        <li>재외국민이 상속으로 주택을 취득하면 처음부터 상속인 범위에서 빠지므로, 특례세율(중과기준세율을 뺀 세율)을 적용받지 못하고 <strong>일반 상속 취득세율</strong>이 적용된다.</li>
+      </ul>
+
+      </SubSection>
+
+      <SubSection title="● 진짜 기준선 — 국적이 아니라 국내 가구 형성">
+
+      <p>보호 기준은 국적이 아니라 <strong>"국내에서 실제로 한 가구를 이루어 생활하는가"</strong>이다.</p>
+
+      <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
+      <thead>
+      <tr style={{backgroundColor: '#f0f0f0'}}>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>지위</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>1가구 포섭</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>설명</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>한국인 (재외국민)</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>제외</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>같은 국적이라도 해외에 생활근거를 둔 재외국민은 빠진다</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>외국인 (국내 세대원)</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>포함</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>한국인 배우자와 국내에서 한 가구를 이루고 세대별 주민등록표에 등록되어 있으면 들어온다</td>
+      </tr>
+      </tbody>
+      </table>
+
+      </SubSection>
+
+      <SubSection title="● 실무 확인 사항">
+
+      <ul className="list-disc pl-6 my-4 space-y-1">
+        <li>그 외국인이 실제로 시행령 §6의2에 따라 <strong>세대별 주민등록표에 "기록"</strong>되어 있는지 확인할 것. <span className="text-gray-600">(단순 외국인등록·국내거소신고만으로는 부족, 세대표 기록 필요)</span></li>
+        <li><strong>재외국민의 의미</strong>: 주민등록법 §6①3호에 따라 <strong>재외국민으로 주민등록된(그 지위에 있는) 사람</strong>. 단순히 해외에 오래 체류 중인 일반 국민과는 구별되므로, 상속인이 법적으로 재외국민 지위인지 주민등록 상태로 확인해야 한다.</li>
+        <li><strong>유권해석 마항</strong>: 질의 당시 사실관계 기준 해석이며, 최종적으로는 과세권자가 면밀한 조사를 통해 결정할 사안이다.</li>
+      </ul>
+
+      <Insight>
+
+      <p><strong>남는 비대칭 (검토 여지)</strong> — 동일하게 무주택으로 국내 가구를 이루다 배우자 사망으로 상속받더라도, 상속인이 <strong>재외국민이면 빠지고 외국인이면 들어올 수 있다</strong>. 입법정책적으로 비판·토론의 여지가 있는 지점이다.</p>
+
+      </Insight>
 
       </SubSection>
 
@@ -406,6 +522,24 @@ export default function InheritanceFilingV10() {
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>민법</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://law.go.kr/법령/민법/제779조" target="_blank" rel="noopener noreferrer">§779</a></td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>가족의 범위</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>참조</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주민등록법</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://law.go.kr/법령/주민등록법/제6조" target="_blank" rel="noopener noreferrer">§6</a></td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>등록 대상(재외국민 정의 §6①3호)</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>참조</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주민등록법 시행령</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://law.go.kr/법령/주민등록법 시행령/제6조의2" target="_blank" rel="noopener noreferrer">§6의2</a></td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>외국인의 세대별 주민등록표 기록</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>유권해석</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>행정안전부</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>부동산세제과-871</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>외국인 1가구1주택 특례(2021.3.26.)</td>
       </tr>
       </tbody>
       </table>
