@@ -155,7 +155,7 @@ export default function InheritanceFilingV10() {
       <Insight>
 
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li><strong>재외국민</strong>은 상속 세율특례 적용 <strong>불가</strong> (외국인 배우자는 가능) - 지방세법 §15①②가목</li>
+        <li><strong>재외국민</strong>은 상속 세율특례 적용 <strong>불가</strong> (외국인 배우자는 가능) - <a href="https://law.go.kr/법령/지방세법/제15조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">지방세법 §15①②가목</a></li>
         <li><strong>고급주택</strong>은 감면대상에서 <strong>제외</strong></li>
         <li><strong>상속인 기준</strong>에서만 결정 / 피상속인 주택수 관계없이</li>
       </ul>
@@ -188,16 +188,16 @@ export default function InheritanceFilingV10() {
 
       <p><strong>결론</strong>: 외국인은 특례 <strong>제외 대상이 아니다</strong>. 요건을 충족하면 오히려 특례세율(저율) 적용 대상이 된다.</p>
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li>시행령 §29①이 명시적으로 제외하는 것은 <strong>"재외국민"뿐</strong> (주민등록법 §6①3호)</li>
+        <li><a href="https://law.go.kr/법령/지방세법시행령/제29조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">시행령 §29①</a>이 명시적으로 제외하는 것은 <strong>"재외국민"뿐</strong> (<a href="https://law.go.kr/법령/주민등록법/제6조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">주민등록법 §6①3호</a>)</li>
         <li>"재외국민이 빠지니 외국인도 당연히 빠진다"는 추론은 <strong>성립하지 않는다</strong> — 두 지위는 법적으로 다르다</li>
-        <li>근거: 행정안전부 <strong>부동산세제과-871호(2021.3.26.)</strong> 유권해석</li>
+        <li>근거: 행정안전부 <a href="https://www.olta.re.kr/explainInfo/authoInterpretationDetail.do?num=60087345" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline"><strong>부동산세제과-871호(2021.3.26.)</strong></a> 유권해석</li>
       </ul>
 
       </Insight>
 
       <SubSection title="● 무엇이 제외되는가">
 
-      <p>지방세법 시행령 §29①은 1가구 판정의 상속인 범위에서 <strong>재외국민만</strong> 명시 제외한다.</p>
+      <p><a href="https://law.go.kr/법령/지방세법시행령/제29조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">지방세법 시행령 §29①</a>은 1가구 판정의 상속인 범위에서 <strong>재외국민만</strong> 명시 제외한다.</p>
       <ul className="list-disc pl-6 my-4 space-y-1">
         <li><strong>외국인</strong>은 이 제외 문구에 등장하지 않는다.</li>
         <li><strong>재외국민</strong> = 한국 국적자(외국 거주). 그대로 두면 재외국민용 주민등록으로 특례에 포섭되므로 정책적으로 명시 배제한 것.</li>
@@ -207,7 +207,7 @@ export default function InheritanceFilingV10() {
 
       <SubSection title="● 외국인이 1가구 판정에 들어오는 경로">
 
-      <p>주민등록법 §6의 등록 대상은 거주자·거주불명자·재외국민이며, <strong>외국인은 원칙적으로 예외</strong>(주민등록 대상 아님)다. 다만 주민등록법 시행령 §6의2에 따라 아래 요건을 갖추고 신청하면 <strong>세대별 주민등록표에 "기록"</strong>될 수 있다.</p>
+      <p><a href="https://law.go.kr/법령/주민등록법/제6조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">주민등록법 §6</a>의 등록 대상은 거주자·거주불명자·재외국민이며, <strong>외국인은 원칙적으로 예외</strong>(주민등록 대상 아님)다. 다만 <a href="https://law.go.kr/법령/주민등록법 시행령/제6조의2" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">주민등록법 시행령 §6의2</a>에 따라 아래 요건을 갖추고 신청하면 <strong>세대별 주민등록표에 "기록"</strong>될 수 있다.</p>
 
       <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
       <thead>
@@ -228,13 +228,11 @@ export default function InheritanceFilingV10() {
       </tbody>
       </table>
 
-      <p>→ 이 경로로 외국인이 "세대별 주민등록표에 함께 기재된 가족" 지위를 얻는다.</p>
-
       </SubSection>
 
       <SubSection title="● 특례 적용 결론 (유권해석 요지)">
 
-      <p>외국인이 피상속인의 <strong>배우자로서 상속인</strong>에 해당하고, 그 외국인과 <strong>세대별 주민등록표에 함께 기재된 가족</strong>으로 구성된 1가구가 상속대상 주택을 제외하고 주택을 소유하지 않으면 <strong>특례세율 적용이 타당</strong>하다.</p>
+      <p>외국인이 피상속인의 <strong>배우자 또는 직계혈족으로서 상속인</strong>에 해당하고, 그 외국인이 <strong>세대별 주민등록표에 함께 기재된 가족</strong>으로 구성된 1가구가 상속대상 주택을 제외하고 주택을 소유하지 않으면 <strong>특례세율 적용이 타당</strong>하다.</p>
 
       <p className="text-sm text-gray-600">입법 취지 — 상속주택 1가구1주택 특례는 가구원 전체가 무주택인 상태에서 가족 사망으로 불가피하게 주택을 취득하는 경우 생계유지를 지원하려는 것이며, 이 취지는 가구원의 국적(한국인/외국인)과 무관하게 작동한다.</p>
 
@@ -244,7 +242,7 @@ export default function InheritanceFilingV10() {
 
       <p>재외국민 제외는 "외국에 생활근거를 둔 한국인이 취득했으니 빼겠다"는 <strong>취득자 직접 배제가 아니라</strong>, <strong>1가구 판정 단계에서 빠지는 구조</strong>다.</p>
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li>시행령 §29①이 제외하는 대상은 정확히 <strong>"상속인 중 재외국민"</strong> — 즉 재외국민은 이 특례의 1가구를 구성하는 상속인 자체로 인정하지 않는다.</li>
+        <li><a href="https://law.go.kr/법령/지방세법시행령/제29조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">시행령 §29①</a>이 제외하는 대상은 정확히 <strong>"상속인 중 재외국민"</strong> — 즉 재외국민은 이 특례의 1가구를 구성하는 상속인 자체로 인정하지 않는다.</li>
         <li>재외국민이 상속으로 주택을 취득하면 처음부터 상속인 범위에서 빠지므로, 특례세율(중과기준세율을 뺀 세율)을 적용받지 못하고 <strong>일반 상속 취득세율</strong>이 적용된다.</li>
       </ul>
 
@@ -281,8 +279,8 @@ export default function InheritanceFilingV10() {
       <SubSection title="● 실무 확인 사항">
 
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li>그 외국인이 실제로 시행령 §6의2에 따라 <strong>세대별 주민등록표에 "기록"</strong>되어 있는지 확인할 것. <span className="text-gray-600">(단순 외국인등록·국내거소신고만으로는 부족, 세대표 기록 필요)</span></li>
-        <li><strong>재외국민의 의미</strong>: 주민등록법 §6①3호에 따라 <strong>재외국민으로 주민등록된(그 지위에 있는) 사람</strong>. 단순히 해외에 오래 체류 중인 일반 국민과는 구별되므로, 상속인이 법적으로 재외국민 지위인지 주민등록 상태로 확인해야 한다.</li>
+        <li>그 외국인이 실제로 <a href="https://law.go.kr/법령/주민등록법 시행령/제6조의2" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">시행령 §6의2</a>에 따라 <strong>세대별 주민등록표에 "기록"</strong>되어 있는지 확인할 것. <span className="text-gray-600">(단순 외국인등록·국내거소신고만으로는 부족, 세대표 기록 필요)</span></li>
+        <li><strong>재외국민의 의미</strong>: <a href="https://law.go.kr/법령/주민등록법/제6조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">주민등록법 §6①3호</a>에 따라 <strong>재외국민으로 주민등록된(그 지위에 있는) 사람</strong>. 단순히 해외에 오래 체류 중인 일반 국민과는 구별되므로, 상속인이 법적으로 재외국민 지위인지 주민등록 상태로 확인해야 한다.</li>
         <li><strong>유권해석 마항</strong>: 질의 당시 사실관계 기준 해석이며, 최종적으로는 과세권자가 면밀한 조사를 통해 결정할 사안이다.</li>
       </ul>
 
@@ -376,7 +374,7 @@ export default function InheritanceFilingV10() {
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>등기후 재협의</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>상속기한 남아있으면 증여로 보지않고 <strong>등록면허세만</strong> 내고 변경</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px', color: '#cf1322'}}><strong>증여</strong>에 의한 취득세 발생 (지방세법 §7⑬)<br/>※예외조항 있음</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', color: '#cf1322'}}><strong>증여</strong>에 의한 취득세 발생 (<a href="https://law.go.kr/법령/지방세법/제7조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">지방세법 §7⑬</a>)<br/>※예외조항 있음</td>
       </tr>
       </tbody>
       </table>
@@ -538,7 +536,7 @@ export default function InheritanceFilingV10() {
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>유권해석</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>행정안전부</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>부동산세제과-871</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.olta.re.kr/explainInfo/authoInterpretationDetail.do?num=60087345" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">부동산세제과-871</a></td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>외국인 1가구1주택 특례(2021.3.26.)</td>
       </tr>
       </tbody>

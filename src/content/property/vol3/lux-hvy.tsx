@@ -13,19 +13,19 @@ export default function LuxHvy() {
   return (
     <div className="space-y-8">
       <p className="text-muted">
-        재산세 고급오락장 중과는 취득세와 동일하게 <strong>「지방세법 시행령」 제28조 제5항 제4호</strong>의
-        유흥주점영업 기준으로 판정한다. 본 단원은 제공된 법령 중 <strong>고급오락장(유흥주점)</strong> 관련 부분만 추려
-        실무 판정·과세표준 산정 절차로 정리한 것이다.
+        재산세 고급오락장 중과는 취득세와 동일하게{" "}
+        <a href="https://www.law.go.kr/법령/지방세법시행령/제28조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline"><strong>「지방세법 시행령」 제28조 제5항 제4호</strong></a>의
+        유흥주점영업 기준으로 판정한다.
       </p>
 
       <CalcBox title="■ 중과 판정 기준 (시행령 §28 ⑤ 4호)">
         <p>
-          「식품위생법」 제37조에 따른 허가 대상 <strong>유흥주점영업</strong>으로서, 아래 <strong>전제</strong>를 충족하고
+          <a href="https://www.law.go.kr/법령/식품위생법/제37조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">「식품위생법」 제37조</a>에 따른 허가 대상 <strong>유흥주점영업</strong>으로서, 아래 <strong>전제</strong>를 충족하고
           <strong> 가목 또는 나목</strong> 중 하나에 해당하면 고급오락장으로 본다.
         </p>
 
         <SubSection title="● 전제 — 영업장 면적(공용 포함) 100㎡ 초과">
-          <p>① 「식품위생법」 §37 허가 대상 <strong>유흥주점영업</strong>일 것</p>
+          <p>① <a href="https://www.law.go.kr/법령/식품위생법/제37조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">「식품위생법」 §37</a> 허가 대상 <strong>유흥주점영업</strong>일 것</p>
           <p>
             ② <strong>공용면적을 포함</strong>한 영업장의 면적이 <span style={red}>100㎡ 초과</span>일 것
             (100㎡ 이하이면 가목·나목에 해당해도 중과 대상에서 제외)
@@ -137,7 +137,7 @@ export default function LuxHvy() {
             고급오락장 부속토지 = 건축물 부속토지 × (고급오락장용 연면적 ÷ 건축물 전체 연면적)
           </p>
           <Insight>
-            부속토지의 <strong>경계가 명확하지 않을 때</strong>는 (법 §13⑤ 본문) 그 건축물
+            부속토지의 <strong>경계가 명확하지 않을 때</strong>는 (<a href="https://www.law.go.kr/법령/지방세법/제13조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">법 §13⑤ 본문</a>) 그 건축물
             <strong> 바닥면적의 10배</strong>에 해당하는 토지를 부속토지로 본다.
           </Insight>
         </SubSection>
@@ -293,7 +293,7 @@ export default function LuxHvy() {
             <tbody>
               <tr>
                 <td style={{ ...tdHead, textAlign: "center" }}>1</td>
-                <td style={td}>「식품위생법」 §37 <strong>유흥주점영업 허가</strong> 대상인가?</td>
+                <td style={td}><a href="https://www.law.go.kr/법령/식품위생법/제37조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">「식품위생법」 §37</a> <strong>유흥주점영업 허가</strong> 대상인가?</td>
               </tr>
               <tr>
                 <td style={{ ...tdHead, textAlign: "center" }}>2</td>
@@ -313,11 +313,11 @@ export default function LuxHvy() {
               </tr>
               <tr>
                 <td style={{ ...tdHead, textAlign: "center" }}>6</td>
-                <td style={td}>건물 일부 사용 시 <strong>연면적 비율로 부속토지 안분</strong>했는가? (§28⑤ 후단)</td>
+                <td style={td}>건물 일부 사용 시 <strong>연면적 비율로 부속토지 안분</strong>했는가? (<a href="https://www.law.go.kr/법령/지방세법시행령/제28조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">§28⑤ 후단</a>)</td>
               </tr>
               <tr>
                 <td style={{ ...tdHead, textAlign: "center" }}>7</td>
-                <td style={td}>경계 불명확 시 <strong>바닥면적 10배</strong>를 부속토지로 적용했는가? (§13⑤ 본문)</td>
+                <td style={td}>경계 불명확 시 <strong>바닥면적 10배</strong>를 부속토지로 적용했는가? (<a href="https://www.law.go.kr/법령/지방세법/제13조" target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">§13⑤ 본문</a>)</td>
               </tr>
             </tbody>
           </table>
