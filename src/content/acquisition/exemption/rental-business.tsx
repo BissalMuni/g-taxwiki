@@ -296,6 +296,36 @@ export default function RentalBusinessV10() {
 
         </Insight>
 
+        <Insight>
+
+        <p><strong>과세기준일 전 신청 → 기준일 후 등록 완료된 경우 (조심 2024방0721)</strong></p>
+        <p>재산세 과세기준일(6.1.) 이전에 임대사업자 등록을 신청하였으나, 행정관청의 민원처리 기간으로 인해 과세기준일 이후 등록이 완료된 경우에도 재산세 감면 대상에 해당함.</p>
+
+        <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', margin: '12px 0'}}>
+        <tbody>
+        <tr>
+        <td style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold', width: '30%'}}>신청일</td>
+        <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>2022.5.27. (과세기준일 이전)</td>
+        </tr>
+        <tr>
+        <td style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}}>과세기준일</td>
+        <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>2022.6.1.</td>
+        </tr>
+        <tr>
+        <td style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}}>등록완료일</td>
+        <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>2022.6.3. (과세기준일 이후)</td>
+        </tr>
+        </tbody>
+        </table>
+
+        <ul className="list-disc pl-6 my-4 space-y-1">
+          <li><strong>처분청</strong>: 등록완료일(6.3.) 기준 → 과세기준일 현재 미등록 → 감면 불가</li>
+          <li><strong>심판부</strong>: 신청일(5.27.) 기준 → 감면 인정 (부과처분 취소)</li>
+        </ul>
+        <p><strong>근거</strong>: 동일한 날 신청하더라도 담당자에 따라 처리일이 달라질 수 있어 납세자의 예측가능성·조세법률관계 안정성을 침해할 수 있음. 등록 지연은 행정관청 내부 민원처리 절차에 기인한 것으로 납세자 귀책 없음.</p>
+
+        </Insight>
+
       </CalcBox>
 
       <hr className="my-6" />
