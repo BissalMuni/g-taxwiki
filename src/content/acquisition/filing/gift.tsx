@@ -70,7 +70,7 @@ export default function GiftV10() {
       </td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', color: '#cf1322'}}>12%</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontSize: '12px'}}>
-      법 §13의2②<br/>
+      <a href="https://law.go.kr/법령/지방세법/제13조의2" target="_blank" rel="noopener noreferrer">법 §13의2②</a><br/>
       <p>다주택자 조세회피 방지 목적</p>
       </td>
       </tr>
@@ -87,7 +87,7 @@ export default function GiftV10() {
       <ul className="list-disc pl-6 my-4 space-y-1">
         <li><strong>부담부증여</strong>도 무상부분은 <strong>중과판단대상</strong></li>
         <li>수증자(취득자)의 주택 소유수와 관계없이 <strong>증여자의 주택 소유수</strong>를 기준으로 판단</li>
-        <li>1세대의 주택수 판단시 <strong>분양권, 입주권, 오피스텔 포함</strong> (법 §13의3)</li>
+        <li>1세대의 주택수 판단시 <strong>분양권, 입주권, 오피스텔 포함</strong> (<a href="https://law.go.kr/법령/지방세법/제13조의3" target="_blank" rel="noopener noreferrer">법 §13의3</a>)</li>
         <li><strong>증여는 주택수 제외 규정 없음</strong></li>
         <li>증여계약서 상 증여계약일이 <strong>2020.8.11. 이전</strong>이면 종전세율(3.5%) 적용</li>
       </ul>
@@ -228,8 +228,8 @@ export default function GiftV10() {
       <Insight>
 
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li>증여취득의 과표는 원칙적으로 <strong>시가인정액</strong> 적용 (법 §10조의2①)</li>
-        <li>시가인정액을 산정하기 어려운 경우 <strong>시가표준액</strong> 적용 (법 §10조의2②)</li>
+        <li>증여취득의 과표는 원칙적으로 <strong>시가인정액</strong> 적용 (<a href="https://law.go.kr/법령/지방세법/제10조의2" target="_blank" rel="noopener noreferrer">법 §10조의2①</a>)</li>
+        <li>시가인정액을 산정하기 어려운 경우 <strong>시가표준액</strong> 적용 (<a href="https://law.go.kr/법령/지방세법/제10조의2" target="_blank" rel="noopener noreferrer">법 §10조의2②</a>)</li>
       </ul>
 
       </Insight>
@@ -270,7 +270,7 @@ export default function GiftV10() {
       <Insight>
 
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li>시행령 §20②1호에 의해 <strong>국가, 판결, 공매, 법인의 취득</strong>은 합의해제규정이 없음 (계약해제 불인정)</li>
+        <li><a href="https://law.go.kr/법령/지방세법시행령/제20조" target="_blank" rel="noopener noreferrer">시행령 §20②1호</a>에 의해 <strong>국가, 판결, 공매, 법인의 취득</strong>은 합의해제규정이 없음 (계약해제 불인정)</li>
         <li>등기한 후 합의해제하는 경우: 취득세 환급없이 <strong>기타등록세(7,200)</strong>와 합의해제계약서로 말소등기</li>
         <li><strong>계약해제신고서는 검인 불필요</strong></li>
       </ul>
