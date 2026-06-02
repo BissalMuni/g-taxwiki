@@ -2,7 +2,7 @@
 
 import { CalcBox } from "@/components/content/shared";
 
-export default function Base() {
+export default function RateLand() {
   return (
     <div className="space-y-8">
       <CalcBox title="■ 준비 중">

@@ -54,7 +54,7 @@
             {
               "id": "prop-vol1-taxpayer-unknown-owner",
               "slug": "unknown-owner",
-              "title": "Ⅲ. 소유권 귀속이 불분명한 재산의 납세의무"
+              "title": "Ⅲ. 소유권 귀속이 불분명한 재산의 납세의무자"
             }
           ]
         },
@@ -66,7 +66,24 @@
             {
               "id": "prop-vol1-object-land",
               "slug": "land",
-              "title": "Ⅰ. 토지"
+              "title": "Ⅰ. 토지",
+              "children": [
+                {
+                  "id": "prop-vol1-object-land-separate",
+                  "slug": "separate",
+                  "title": "Ⅰ. 분리과세대상 토지"
+                },
+                {
+                  "id": "prop-vol1-object-land-special-aggregate",
+                  "slug": "special-aggregate",
+                  "title": "Ⅱ. 별도합산과세대상 토지"
+                },
+                {
+                  "id": "prop-vol1-object-land-general-aggregate",
+                  "slug": "general-aggregate",
+                  "title": "Ⅲ. 종합합산과세대상 토지"
+                }
+              ]
             },
             {
               "id": "prop-vol1-object-building",
@@ -86,19 +103,56 @@
           ]
         },
         {
-          "id": "prop-vol1-base-rate",
-          "slug": "base-rate",
-          "title": "4장. 과세표준 및 세율",
+          "id": "prop-vol1-base",
+          "slug": "base",
+          "title": "4-1장. 과세표준",
           "children": [
             {
-              "id": "prop-vol1-base-rate-base",
-              "slug": "base",
-              "title": "Ⅰ. 과세표준"
+              "id": "prop-vol1-base-overview",
+              "slug": "overview",
+              "title": "Ⅰ. 개요"
             },
             {
-              "id": "prop-vol1-base-rate-rate",
-              "slug": "rate",
-              "title": "Ⅱ. 세율"
+              "id": "prop-vol1-base-amount",
+              "slug": "amount",
+              "title": "Ⅱ. 과세표준액"
+            },
+            {
+              "id": "prop-vol1-base-cap",
+              "slug": "base-cap",
+              "title": "Ⅲ. 과표상한"
+            }
+          ]
+        },
+        {
+          "id": "prop-vol1-rate",
+          "slug": "rate",
+          "title": "4-2장. 세율",
+          "children": [
+            {
+              "id": "prop-vol1-rate-land",
+              "slug": "land",
+              "title": "Ⅰ. 재산세(토지)"
+            },
+            {
+              "id": "prop-vol1-rate-building",
+              "slug": "building",
+              "title": "Ⅱ. 재산세(건축물)"
+            },
+            {
+              "id": "prop-vol1-rate-house",
+              "slug": "house",
+              "title": "Ⅲ. 재산세(주택)"
+            },
+            {
+              "id": "prop-vol1-rate-ship-aircraft",
+              "slug": "ship-aircraft",
+              "title": "Ⅳ. 선박·항공기"
+            },
+            {
+              "id": "prop-vol1-rate-flexible",
+              "slug": "flexible",
+              "title": "Ⅴ. 탄력세율"
             }
           ]
         },
@@ -140,7 +194,7 @@
             {
               "id": "prop-vol1-levy-trust",
               "slug": "trust",
-              "title": "Ⅶ. 신탁재산에 대한 특례"
+              "title": "Ⅶ. 신탁재산 수탁자의 물적납세의무"
             },
             {
               "id": "prop-vol1-levy-religion",
@@ -173,11 +227,6 @@
               "id": "prop-vol1-cap-calc",
               "slug": "calc",
               "title": "Ⅱ. 세부담 상한의 계산 방법"
-            },
-            {
-              "id": "prop-vol1-cap-example",
-              "slug": "example",
-              "title": "Ⅲ. 세액계산 사례"
             }
           ]
         },
@@ -221,7 +270,7 @@
             {
               "id": "prop-vol1-reduction-rental",
               "slug": "rental",
-              "title": "Ⅳ. 임대주택 등에 대한 감면"
+              "title": "Ⅳ. 공공임대주택 등에 대한 감면"
             },
             {
               "id": "prop-vol1-reduction-long-rental",

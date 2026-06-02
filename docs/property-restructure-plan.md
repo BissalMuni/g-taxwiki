@@ -1,7 +1,7 @@
 # 재산세 책 전체 재구성 — 「2026년 재산세 운용실무」 기준 (작업 핸드오프)
 
-> 상태: **1차 실행 시작 직후 중단** (파싱 텍스트 추출 실패 발견 → OCR 경로 확정).
-> 원본 PDF `2026_silmu.pdf`(서울시 세무과, 582p)는 로컬 전용(gitignore). 파싱 산출물 `silmu/`도 gitignore(재생성 가능).
+> 상태: **파싱 경로 확정 — Read 비전 직독(PNG 렌더)으로 전환.** OCR은 폐기.
+> 원본 PDF `silmu/2026_silmu.pdf`(서울시 세무과, 582p)는 로컬 전용(gitignore). 파싱 산출물 `silmu/`도 gitignore(재생성 가능).
 > 자세한 설계 근거는 로컬 plan: `~/.claude/plans/distributed-gliding-phoenix.md`.
 
 ## 배경
@@ -42,46 +42,38 @@
 
 **이 PDF는 텍스트 레이어가 깨져 있음** — CID-keyed 폰트(ToUnicode 매핑 없음). OpenDataLoader 일반 모드(`format=markdown`) 결과: 582p에서 **추출 한글 단 2줄**, 나머지 전부 이미지 참조 + 빈 표. → law-ebansimsa의 "라인맵→텍스트 슬라이싱" 방식은 **이 PDF엔 적용 불가**(자를 텍스트가 없음).
 
-단, Read 도구로 PDF 페이지를 이미지로 렌더해 읽으면(비전) 한글이 정확히 보임 (1~10p 확인 완료).
+**단, 페이지를 이미지로 렌더하면 Read 비전이 한글·URL·법조문·세율 숫자를 정확히 읽음.** OCR 텍스트 품질이 깨진 폰트라 불확실한 반면, 비전 직독은 200 DPI PNG에서 표지·면책문구 검증 완료(완벽 판독). → **OCR 폐기, 비전 직독을 단일 경로로 확정.**
 
-### 확정 경로: **OCR 초안 + 비전 교정** (사용자 결정)
+### 확정 경로: **Read 비전 직독 (PNG 렌더)** (사용자 결정)
 
-1. `opendataloader-pdf[hybrid]` 설치 후 docling-fast OCR로 재변환 → 텍스트 md 초안 확보.
-2. TSX 작성 시 Read 비전으로 세율 숫자·법조문(조/항/호)·금액 교정.
+OCR/텍스트 슬라이싱을 전부 건너뛰고, PDF 페이지를 PNG로 렌더 → Read 비전으로 직독 → 트리(`property.json`) + TSX 작성. 세율 숫자·법조문(조/항/호)·금액은 렌더 이미지에서 그대로 판독.
 
 ## 작업 환경 (설치 완료)
 
-- Python 3.13.5, Java 17 (`C:\Program Files\Microsoft\jdk-17.0.18.8-hotspot`)
-- `opendataloader-pdf 2.4.7` 설치됨 (hybrid extras는 **미설치** — 다음에 설치 필요)
-- 스테이징 폴더 `silmu/` 생성됨 (PDF 복사본 + 실패한 md + `silmu/2026_silmu_images/` 195개 이미지)
+- **poppler 26.02.0 포터블** — `C:\Users\minh0\tools\poppler\poppler-26.02.0\Library\bin` (`pdftoppm.exe`). 사용자 PATH 등록 완료. choco/winget는 관리자 권한 문제로 실패 → 포터블 zip 직접 설치한 것.
+- 스테이징 폴더 `silmu/` 생성됨. PDF는 `silmu/2026_silmu.pdf`로 이동 완료. 렌더 출력은 `silmu/render/`.
+- (구) Python/Java/opendataloader 환경은 OCR 폐기로 불필요.
 
-## 다음 단계 (집에서 이어서)
+## 다음 단계
 
-```bash
-# 1) 하이브리드 OCR 설치
-python -m pip install -U "opendataloader-pdf[hybrid]"
-
-# 2) docling-fast OCR로 재변환 (Java 17 PATH 필요, 582p라 수십 분)
-#    Python API의 hybrid 파라미터 확인 후, 예:
-JAVA_HOME="/c/Program Files/Microsoft/jdk-17.0.18.8-hotspot" \
-PATH="/c/Program Files/Microsoft/jdk-17.0.18.8-hotspot/bin:$PATH" \
-python -c "import opendataloader_pdf; opendataloader_pdf.convert(input_path='silmu/2026_silmu.pdf', output_dir='silmu', format='markdown', markdown_page_separator='<!-- PAGE_BREAK -->', hybrid='docling-fast')"
-#    ※ CLI 대안: opendataloader-pdf silmu/2026_silmu.pdf --hybrid docling-fast
+```powershell
+# 페이지 범위를 PNG로 렌더 (200 DPI 권장 — 한글 또렷). 예: 36~50p
+$bin = "C:\Users\minh0\tools\poppler\poppler-26.02.0\Library\bin"
+& "$bin\pdftoppm.exe" -png -r 200 -f 36 -l 50 `
+  "d:\Coding\g-taxwiki\silmu\2026_silmu.pdf" "d:\Coding\g-taxwiki\silmu\render\p"
+# → silmu/render/p-036.png … 를 Read 도구로 직독
 ```
 
 그 다음 파이프라인 (제1·2편만):
 
 | 단계 | 산출물 | 담당 |
 |---|---|---|
-| [2] 원본 목차 | `silmu/wiki/0.2.1-목차.md` | LLM |
+| [2] 원본 목차 직독 | `silmu/wiki/0.2.1-목차.md` | LLM(비전) |
 | [2.5] 코드목차 (위 규칙 적용) | `silmu/wiki/0.2.2-목차_코드.md` | LLM ★승인 |
-| [2.6] 라인맵 초안 | `silmu/wiki/0.2.3-라인맵.md` | 스크립트 |
-| [2.7] 라인맵 검증·보정 | `silmu/wiki/0.2.4-라인맵_검증.md` | 스크립트+LLM ★승인 |
-| [3] 섹션별 md 슬라이싱 | `silmu/wiki/<코드>-<제목>.md` | 스크립트 |
-| [4] property.json 재작성 (제1·2편 + slug) | `src/book/data/property.json` | LLM, 커밋 |
-| [5] 섹션 md → TSX (비전 교정) | `src/content/property/...` | LLM, 커밋 |
+| [3] property.json 재작성 (제1·2편 + slug) | `src/book/data/property.json` | LLM, 커밋 |
+| [4] 섹션별 페이지 렌더 → 비전 직독 → TSX | `src/content/property/...` | LLM, 커밋 |
 
-> OCR 품질이 나쁘면 [2.6][2.7][3] 텍스트 슬라이싱을 건너뛰고, Read 비전으로 페이지 직독→TSX 작성으로 전환.
+> 라인맵·텍스트 슬라이싱 단계는 비전 직독 경로에서 제거됨(잘라낼 텍스트가 없음). 목차도 비전으로 직독해 코드목차를 만든다.
 
 ## 슬러그·파일 이동 주의
 
