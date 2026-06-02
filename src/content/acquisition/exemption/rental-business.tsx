@@ -374,17 +374,83 @@ export default function RentalBusinessV10() {
 
         </SubSection>
 
-        <SubSection title="● 추징 제외 — 자진말소·자동말소 예외">
+        <SubSection title="● 추징 제외 — 재산세 감면 추징 제외 사유">
+
+          <p style={{fontSize: 'var(--content-font-size, 13px)', color: '#555', marginBottom: '12px'}}>
+            근거: 지특법 §31의3 ⑤ 단서 + 지특법 시행령 §13의2 ③
+          </p>
+
+          <p><strong>① 임대의무기간 경과 후 등록 말소</strong></p>
+          <ul className="list-disc pl-6 my-2 space-y-1">
+            <li>지특법 §31의3 ⑤ 단서 전단 — 법률에서 직접 규정</li>
+            <li>민임법 §43① 임대의무기간을 모두 채운 후 말소된 경우</li>
+            <li>말소 근거 조문: 민임법 §6① 제3호</li>
+          </ul>
+
+          <p style={{marginTop: '12px'}}><strong>② 대통령령으로 정하는 경우</strong> (지특법 시행령 §13의2③ → 민임법 §43④ 사유로 말소)</p>
+
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', margin: '8px 0 16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold', width: '80px', textAlign: 'center'}}>호</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}}>사유</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center'}}>제1호</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>부도·파산 등 경제적 사정으로 임대 계속 불가</td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center'}}>제2호</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>공공지원임대주택 20년 임대를 위한 일부 매각</td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center'}}>제3호</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>법령 개정에 의한 아파트·단기 말소 (민임법 §6① 제11호)</td>
+          </tr>
+          </tbody>
+          </table>
+
+          <p style={{fontWeight: 'bold', marginBottom: '8px'}}>추징 대상 여부 비교</p>
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold'}}>사유</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '6px', fontWeight: 'bold', width: '110px', textAlign: 'center'}}>추징 여부</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr style={{backgroundColor: '#fff2f0'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>임대의무기간 중 매각·증여</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>추징 ⭕</td>
+          </tr>
+          <tr style={{backgroundColor: '#fff2f0'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>임대의무기간 중 멸실·용도변경 등 위반 말소</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>추징 ⭕</td>
+          </tr>
+          <tr style={{backgroundColor: '#f6ffed'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>임대의무기간 경과 후 말소</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>제외 ✅</td>
+          </tr>
+          <tr style={{backgroundColor: '#f6ffed'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>부도·파산 등으로 말소</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>제외 ✅</td>
+          </tr>
+          <tr style={{backgroundColor: '#f6ffed'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px'}}>아파트·단기 법령 개정 말소</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '6px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>제외 ✅</td>
+          </tr>
+          </tbody>
+          </table>
 
           <Insight>
 
-          <p><strong>§31의3 ⑤ 단서</strong>: 민특법 §43①에 따른 <strong>임대의무기간 경과 후 등록 말소</strong>, 그 밖에 <strong>대통령령으로 정하는 경우</strong>(지특법 시행령 §13의2③ → 민특법 §43④ 사유로 등록 말소) → 재산세 추징 제외</p>
-
           <p><strong>지특법 시행령 §13의2</strong> 위임 매핑 (시행 2026.2.27.):</p>
           <ul className="list-disc pl-6 my-4 space-y-1">
-            <li>① 법 §31의3③제2호의 &quot;대통령령으로 정하는 경우&quot; → 민특법 §43④의 경우 (취득세 추징 예외)</li>
-            <li>② 법 §31의3④의 &quot;대통령령으로 정하는 다가구주택&quot; → 모든 호수 전용면적 40㎡ 이하 + 건축물대장에 호수별 면적이 구분 기재된 다가구주택 (민특법 시행령 §2의2의 일부 임대 다가구주택은 임대 부분만)</li>
-            <li>③ 법 §31의3⑤의 &quot;대통령령으로 정하는 경우&quot; → 민특법 §43④ 사유로 등록 말소된 경우 (재산세 추징 예외)</li>
+            <li>§13의2① : 법 §31의3③제2호의 &quot;대통령령으로 정하는 경우&quot; → 민특법 §43④의 경우 <strong>(취득세 추징 예외)</strong></li>
+            <li>§13의2② : 법 §31의3④의 &quot;대통령령으로 정하는 다가구주택&quot; → 모든 호수 전용면적 40㎡ 이하 + 건축물대장에 호수별 면적이 구분 기재된 다가구주택 (민특법 시행령 §2의2의 일부 임대 다가구주택은 임대 부분만)</li>
+            <li>§13의2③ : 법 §31의3⑤의 &quot;대통령령으로 정하는 경우&quot; → 민특법 §43④ 사유로 등록 말소된 경우 <strong>(재산세 추징 예외)</strong></li>
           </ul>
 
           <p>단기임대(4년)와 장기임대 중 아파트매입임대와 같이 <strong>폐지유형</strong>으로 등록하였다가 임대의무기간 종료 전 <strong>자진말소</strong>하는 경우 취득세·재산세 감면혜택 유지하고 <strong>추징하지 않음</strong> ('20.8.18. 신설시행)</p>
