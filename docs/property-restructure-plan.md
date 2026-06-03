@@ -71,9 +71,11 @@ $bin = "C:\Users\minh0\tools\poppler\poppler-26.02.0\Library\bin"
 | [2] 원본 목차 직독 | `silmu/wiki/0.2.1-목차.md` | LLM(비전) |
 | [2.5] 코드목차 (위 규칙 적용) | `silmu/wiki/0.2.2-목차_코드.md` | LLM ★승인 |
 | [3] property.json 재작성 (제1·2편 + slug) | `src/book/data/property.json` | LLM, 커밋 |
-| [4] 섹션별 페이지 렌더 → 비전 직독 → TSX | `src/content/property/...` | LLM, 커밋 |
+| [4] 섹션별 페이지 렌더 → 비전 직독 → **섹션 md** | `silmu/wiki/<slug>.md` | LLM ★전사확정 |
+| [5] 섹션 md → TSX (형식 입히기) | `src/content/property/...` | LLM, 커밋 |
 
 > 라인맵·텍스트 슬라이싱 단계는 비전 직독 경로에서 제거됨(잘라낼 텍스트가 없음). 목차도 비전으로 직독해 코드목차를 만든다.
+> **md 우선 원칙**: 각 리프는 먼저 `silmu/wiki/<slug>.md`에 충실 전사([4])해 정확성을 확정하고, 그 md를 TSX로 형식만 입힌다([5]). 전사 단계와 표현 단계를 분리해 오독을 md에서 걸러낸다. md 파일명은 콘텐츠 경로 slug 사용(예: `vol1-overview-statute.md`).
 
 ## 슬러그·파일 이동 주의
 
