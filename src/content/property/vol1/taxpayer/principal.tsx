@@ -71,10 +71,8 @@ export default function Principal() {
         </SubSection>
 
         <SubSection title="● 시가표준액 산정과 건물신축가격기준액">
-          <p>
-            토지 시가표준액 = <strong>면적 × 개별공시지가</strong>, 건물 시가표준액 ={" "}
-            <strong>건물신축가격 기준액 × 구조·용도·위치 × 잔존가치율 × 가감산율</strong>.
-          </p>
+          <p>토지 시가표준액 = <strong>면적 × 개별공시지가</strong></p>
+          <p>건물 시가표준액 = <strong>건물신축가격 기준액 × 구조·용도·위치 × 잔존가치율 × 가감산율</strong></p>
           <table style={tbl}>
             <thead>
               <tr>

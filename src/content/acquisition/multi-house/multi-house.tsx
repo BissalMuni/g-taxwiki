@@ -414,16 +414,13 @@ export default function MultiHouseV11() {
         <p>(<a href="https://law.go.kr/법령/지방세법시행령/제28조의3" target="_blank" rel="noopener noreferrer">시행령 §28조의3</a>)</p>
 
         <SubSection title="● 1세대란?">
-
-          <ul className="list-disc pl-6 my-4 space-y-1">
-            <li>주택 취득자와 등본(<a href="https://law.go.kr/법령/주민등록법/제7조" target="_blank" rel="noopener noreferrer">주민등록법 §7</a>)에 함께 기재된 <strong>민법상 가족</strong> (동거인 제외)으로 구성된 세대</li>
-          </ul>
-
+          <p>주택 취득일 현재 주택을 취득하는 사람과 <strong>세대별 주민등록표(또는 등록외국인기록표등)</strong>에 함께 기재된 가족(동거인 제외)으로 구성된 세대</p>
         </SubSection>
 
-        <SubSection title="● 1세대로 보는 경우 (예외 있음)">
+        <SubSection title="● 1세대에 포함되는 경우 — 주소 달라도 같은 세대 (§28조의3①)">
 
-          {/* 배우자 */}
+          {/* ① 배우자 */}
+          <p style={{fontWeight: 'bold', marginBottom: '4px'}}>① 배우자</p>
           <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
           <thead>
           <tr style={{backgroundColor: '#1890ff', color: 'white'}}>
@@ -441,12 +438,13 @@ export default function MultiHouseV11() {
           </tr>
           <tr style={{backgroundColor: '#e6f7ff'}}>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>O</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법률상 이혼했어도 <strong>생계 같이하면</strong> 포함</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법률상 이혼했더라도 <strong>생계를 같이하는 등 사실상 이혼으로 보기 어려운 경우</strong> 포함</td>
           </tr>
           </tbody>
           </table>
 
-          {/* 30세 미만 미혼 자녀 */}
+          {/* ② 30세 미만 미혼 자녀 */}
+          <p style={{fontWeight: 'bold', marginBottom: '4px'}}>② 30세 미만 미혼 자녀</p>
           <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
           <thead>
           <tr style={{backgroundColor: '#1890ff', color: 'white'}}>
@@ -460,19 +458,27 @@ export default function MultiHouseV11() {
           </tr>
           <tr>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>X</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>단, <strong>소득 있으면</strong> 별도세대 (아래 3가지 모두 충족 시)</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>단, 아래 <strong>별도세대 1호 요건</strong> 충족 시 제외</td>
           </tr>
-          <tr style={{backgroundColor: '#fafafa'}}>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}></td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', paddingLeft: '24px'}}>1) 중위소득 40% 이상</td>
+          </tbody>
+          </table>
+
+          {/* ③ 부모 (직계존속) */}
+          <p style={{fontWeight: 'bold', marginBottom: '4px'}}>③ 부모 (직계존속)</p>
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#1890ff', color: 'white'}}>
+          <th colSpan={2} style={{border: '1px solid #d9d9d9', padding: '10px', fontWeight: 'bold', textAlign: 'left'}}>부모 (직계존속)</th>
           </tr>
-          <tr style={{backgroundColor: '#fafafa'}}>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}></td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', paddingLeft: '24px'}}>2) 독립적 생계 유지</td>
+          </thead>
+          <tbody>
+          <tr style={{backgroundColor: '#e6f7ff'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', width: '30px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>O</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주소 달라도 <strong>1세대</strong></td>
           </tr>
-          <tr style={{backgroundColor: '#fafafa'}}>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}></td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', paddingLeft: '24px'}}>3) 미성년자 제외 (성년이어야 함)</td>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#888', fontWeight: 'bold'}}>조건</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주택을 취득하는 사람이 <strong>미혼이고 30세 미만인 경우에 한함</strong></td>
           </tr>
           </tbody>
           </table>
@@ -677,6 +683,115 @@ export default function MultiHouseV11() {
           </table>
 
           </Insight>
+
+        </SubSection>
+
+        <SubSection title="● 별도세대로 보는 경우 (§28조의3②)">
+
+          {/* 1호 */}
+          <p style={{fontWeight: 'bold', marginTop: '8px', marginBottom: '4px'}}>1호. 30세 미만 자녀 — 소득·독립 요건 충족 시</p>
+          <p style={{marginBottom: '8px', fontSize: '13px'}}>다음 <strong>3가지 모두</strong> 충족하는 경우 별도세대로 봄:</p>
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '80px'}}>요건</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>① 소득</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>취득일이 속하는 달의 직전 12개월 소득이 <strong>기준 중위소득의 40% 이상</strong></td>
+          </tr>
+          <tr style={{backgroundColor: '#fafafa'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>② 독립생계</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>소유 주택을 관리·유지하면서 <strong>독립된 생계 유지 가능</strong></td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>③ 성년</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>미성년자는 제외 (<strong>성년이어야 함</strong>)</td>
+          </tr>
+          </tbody>
+          </table>
+          <Insight>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>소득 확인: 소득금액증명원 등으로 확인 (<strong>증빙 불가 시 불인정</strong>)</li>
+              <li>근로소득자 직전 12개월 소득 미달 시 → 직전 24개월 소득으로 판단 (조심 2022지0888)</li>
+            </ul>
+          </Insight>
+
+          {/* 2호 */}
+          <p style={{fontWeight: 'bold', marginTop: '16px', marginBottom: '4px'}}>2호. 65세 이상 직계존속 동거봉양 합가</p>
+          <p style={{marginBottom: '8px', fontSize: '13px'}}>아래 모든 요건 충족 시 합가하더라도 <strong>별도세대</strong>로 봄:</p>
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '120px'}}>요건</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>피봉양자</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>취득일 현재 <strong>65세 이상 직계존속</strong> (배우자의 직계존속 포함)</td>
+          </tr>
+          <tr style={{backgroundColor: '#fafafa'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>연령 특례</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>직계존속 중 <strong>한 사람만 65세 이상이면 충족</strong> (나머지가 65세 미만이어도 됨)</td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>봉양자 요건</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>30세 이상 직계비속, 혼인한 직계비속, 또는 1호 소득요건 충족 성년 직계비속</td>
+          </tr>
+          </tbody>
+          </table>
+
+          {/* 3호 */}
+          <p style={{fontWeight: 'bold', marginTop: '16px', marginBottom: '4px'}}>3호. 세대전원 90일 이상 출국</p>
+          <p style={{marginBottom: '8px', fontSize: '13px'}}>다음 두 요건 모두 충족 시 별도세대로 봄:</p>
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '80px'}}>요건</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>사유</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><strong>취학 또는 근무상의 형편</strong> 등으로 세대전원이 90일 이상 출국</td>
+          </tr>
+          <tr style={{backgroundColor: '#fafafa'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>신고</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>「주민등록법」§10조의3①에 따라 출국 후 속할 거주지를 <strong>다른 가족의 주소로 신고</strong></td>
+          </tr>
+          </tbody>
+          </table>
+
+          {/* 4호 */}
+          <p style={{fontWeight: 'bold', marginTop: '16px', marginBottom: '4px'}}>4호. 취득 후 60일 이내 세대분리 목적 주소이전</p>
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: '13px', marginBottom: '16px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '80px'}}>구분</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>대상</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>별도의 세대를 구성할 수 있는 사람이 주택을 취득한 경우</td>
+          </tr>
+          <tr style={{backgroundColor: '#fafafa'}}>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>기한</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><strong>취득일로부터 60일 이내</strong></td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>세대분리를 위하여 <strong>취득한 주택으로 주소지를 이전</strong>하는 경우</td>
+          </tr>
+          </tbody>
+          </table>
 
         </SubSection>
 
