@@ -50,61 +50,81 @@ function RateTable({ rows, head }: { rows: [string, string, string][]; head: str
   );
 }
 
+const lnk = { color: "#1890ff", textDecoration: "none" as const };
+
 export default function RateHouse() {
   return (
     <div className="space-y-8">
       <p className="text-muted">
-        주택분 재산세는 <strong>4단계 초과누진세율</strong>을 적용한다. 공시가격 9억원 이하 1세대 1주택자에게는 구간별
-        세율을 0.05%p 인하한 <strong>특례세율</strong>을 적용한다(지법 §111의2).
+        주택분 재산세는 <strong>4단계 초과누진세율</strong>을 적용한다. 공시가격 9억원 이하 1세대 1주택자에게는
+        구간별 세율을 0.05%p 인하한 <strong>특례세율</strong>을 적용한다(
+        <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>지법 §111의2</a>).
       </p>
 
       <CalcBox title="■ 일반 주택 — 4단계 초과누진">
         <p className="text-muted">
           주택별로 아래 세율을 적용한다. 2인 이상 공동소유이거나 토지·건물 소유자가 다른 경우, 토지·건물 가액을 합산한
-          과세표준에 「그 밖의 주택」 세율(§111①3호 나목)을 적용한다.
+          과세표준에 「그 밖의 주택」 세율(
+          <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>§111①3호 나목</a>)을 적용한다.
         </p>
         <RateTable rows={standard} head="세 율" />
       </CalcBox>
 
-      <CalcBox title="■ 1세대 1주택 특례세율 (공시가격 9억원 이하)">
-        <RateTable rows={special} head="특례세율" />
-        <Insight>
-          전 구간 표준세율 대비 <strong>0.05%p 인하</strong>. 서민 주거안정을 위해 적용기간을
-          <strong> '26년까지 연장</strong>(부칙 법률 제17769호, 시행일부터 6년간).
-        </Insight>
-      </CalcBox>
-
+      {/* 특례세율표 + 요건을 하나의 CalcBox로 통합 */}
       <CalcBox title="■ 1세대 1주택 세율특례 (지법 §111의2, 영 §110의2)">
-        <SubSection title="● 1세대의 범위">
-          <p>「주민등록법」상 세대 기준. 배우자·19세 미만 미혼자녀는 주소를 달리해도 같은 세대로 본다.</p>
-          <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.8 }}>
-            <li>형식적 세대분리를 통한 편법 1주택 보유자는 특례 제외</li>
-            <li>고령(65세 이상) 직계존속 봉양 합가는 독립 세대로 인정</li>
-            <li>국외이주 시 친지 등 세대에 형식상 주소를 둔 경우 독립 세대로 인정</li>
+        <SubSection title="● 특례세율 (공시가격 9억원 이하)">
+          <RateTable rows={special} head="특례세율" />
+          <Insight>
+            전 구간 표준세율 대비 <strong>0.05%p 인하</strong>. 서민 주거안정을 위해 적용기간을{" "}
+            <strong>'26년까지 연장</strong>(부칙 법률 제17769호, 시행일부터 6년간).
+          </Insight>
+        </SubSection>
+
+        <SubSection title="● 1세대의 범위 (영 §110의2①)">
+          <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
+            <li>「주민등록법」상 같은 주소에서 생계를 같이하는 자의 집단</li>
+            <li>배우자·19세 미만 미혼자녀 → 주소를 달리해도 <strong>같은 세대</strong></li>
+            <li>형식적 세대분리를 통한 편법 1주택 보유자 → 특례 <strong>제외</strong></li>
+            <li>65세 이상 직계존속 봉양 합가 → <strong>독립 세대</strong> 인정</li>
+            <li>국외이주 후 친지 세대에 형식상 주소를 둔 경우 → <strong>독립 세대</strong> 인정</li>
           </ul>
         </SubSection>
 
-        <SubSection title="● 주택 수 산정 — 제외 대상">
-          <p>
-            각 세대원이 소유한 주택 수를 합산하되(지분·부속토지만 소유해도 1주택), 다음은 주택 수에서 제외한다.
-          </p>
-          <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.8 }}>
-            <li>상속개시일부터 <strong>5년</strong>까지 (5년 경과 후 주된 상속인 지분 기준)</li>
-            <li>사업용(부동산 매매·임대업 제외)·투기무관 주택: 사원주택·가정어린이집·문화재주택·임대등록주택</li>
-            <li>혼인 전부터 소유한 주택은 혼인일부터 <strong>5년</strong>까지</li>
+        <SubSection title="● 주택 수 산정 — 제외 대상 (영 §110의2②③)">
+          <p>각 세대원 소유 주택 수를 합산하되(지분·부속토지만 소유해도 1주택), 아래는 <strong>제외</strong>한다.</p>
+          <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
+            <li>상속주택: 상속개시일부터 <strong>5년</strong> (이후 주된 상속인 지분 기준)</li>
+            <li>사원주택·가정어린이집·문화재주택·임대등록주택 (사업용·투기 무관)</li>
+            <li>혼인 전 소유 주택: 혼인일부터 <strong>5년</strong></li>
             <li>권원 없는 자가 무단건축하여 사용하는 주택</li>
-            <li>
-              인구감소지역(수도권·광역시 등 일부 제외) 소재 시가표준액 <strong>4억원 이하</strong> 주택을
-              '24.1.4.~'26.12.31. 유상취득한 경우
-            </li>
+            <li>인구감소지역 소재 시가표준액 <strong>4억원 이하</strong> 주택 ('24.1.4.∼'26.12.31. 유상취득)</li>
           </ul>
+        </SubSection>
+
+        <SubSection title="● 인구감소지역의 범위">
+          <p>
+            「<a href="https://www.law.go.kr/법령/인구감소지역지원특별법" target="_blank" rel="noreferrer" style={lnk}>인구감소지역 지원 특별법</a>」
+            {" "}§2② 및 행정안전부 고시에 따라 지정한다.
+            다음 지역은 <strong>인구감소지역에서 제외</strong>되므로 주택 수 산정 혜택이 적용되지 않는다
+            (<a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>지법 §111의2③</a> 2의2호):
+          </p>
+          <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
+            <li>수도권 전역 — 서울특별시·인천광역시·경기도 (<a href="https://www.law.go.kr/법령/수도권정비계획법" target="_blank" rel="noreferrer" style={lnk}>수도권정비계획법 §2①</a>)</li>
+            <li>특례시 — 수원·고양·용인·창원 등 인구 100만 이상 도시 (<a href="https://www.law.go.kr/법령/지방자치법" target="_blank" rel="noreferrer" style={lnk}>지방자치법 §198</a>)</li>
+            <li>광역시 소속 구(區) 지역 <span style={{ fontSize: "12px", color: "#888" }}>(단, 광역시 소속 군(郡)은 포함됨)</span></li>
+          </ul>
+          <p style={{ fontSize: "12px", color: "#888", marginTop: "6px" }}>
+            ※ 구체적인 지정 시·군 목록은 행정안전부 고시(인구감소지역 지정·고시) 참조.
+            2023년 기준 89개 시·군 지정 (강원·경북·전남·전북·경남 내륙·농촌 지역 중심).
+          </p>
         </SubSection>
 
         <SubSection title="● 주택 수 제외 시 1세대 1주택 판단">
-          <p>
-            문화재주택·상속주택·혼인 전 소유주택·인구감소지역 주택의 경우, <strong>시가표준액이 높은 주택</strong>을
-            1세대 1주택으로 보아 특례세율을 적용한다. 그 외 주택 수에서 제외되는 주택만 여러 개인 경우 특례 대상이 없다.
-          </p>
+          <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
+            <li>문화재주택·상속주택·혼인 전 주택·인구감소지역 주택이 포함된 경우:
+              {" "}<strong>시가표준액이 높은 주택</strong>을 1세대 1주택으로 보아 특례세율 적용</li>
+            <li>제외 대상 주택만 여러 개인 경우 → 특례 적용 대상 없음</li>
+          </ul>
           <p style={{ fontSize: "12px", color: "#888" }}>
             ※ 무허가 주택 부속토지 관련 1세대 특례 적용 질의회신 (행정자치부 부동산세제과-3654, 2024.10.24.)
           </p>
