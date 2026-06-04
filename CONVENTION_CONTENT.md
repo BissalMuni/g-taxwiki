@@ -116,6 +116,14 @@ export default function TopicName() {
 - CalcBox와 SubSection을 사용하면 자동 적용된다.
 - **`<p>`, `<div>`, `<strong>` 등으로 제목을 쓰면 의견 버튼이 붙지 않는다** — 반드시 CalcBox 또는 SubSection 사용.
 
+## 크게보기(전체화면 팝업) 규칙
+
+- 모든 대목차(`CalcBox`, `■` h2)에는 제목 옆에 **"크게보기" 버튼**이 자동으로 붙는다.
+- 클릭하면 해당 대목차 내용만 거의 전체화면 팝업(모달)으로 표시된다 — 외부 클릭 / X 버튼 / ESC 로 닫힘.
+- **별도 작성이 필요 없다**: `CalcBox`를 규칙대로 쓰면 자동 적용된다. 동작은 `src/components/content/shared.tsx`의 `CalcBox`에 내장됨.
+- 따라서 크게보기 대상이 되어야 하는 단위는 **반드시 `CalcBox`로 묶는다**. `<p>`/`<div>`로 만든 제목 블록은 크게보기 버튼이 붙지 않는다.
+- 팝업은 `CalcBox`의 `children`을 그대로 렌더하므로, 표·SVG·인터랙티브 시각화 등 어떤 내용이든 추가 작업 없이 확대 표시된다.
+
 ## 금지 패턴
 
 ```tsx
