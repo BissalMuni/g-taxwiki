@@ -9,6 +9,9 @@ node_modules
 .claude/*.lock
 tsconfig.tsbuildinfo
 
+# 검색 인덱스 (빌드 산출물 — pnpm search:index 로 자동 생성)
+public/search-index.json
+
 # Docker Claude
 Dockerfile.claude
 docker-compose.claude.yml

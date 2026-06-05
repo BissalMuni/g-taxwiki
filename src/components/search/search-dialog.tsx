@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { searchContent, type SearchResult } from "@/lib/search";
+import { searchContent, preloadSearchIndex, type SearchResult } from "@/lib/search";
 
 /** 검색 다이얼로그 — 사이드바 버튼으로 열림 */
 export function SearchDialog({
@@ -15,11 +15,14 @@ export function SearchDialog({
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  /** 비동기 검색 응답 순서 보장용 요청 ID */
+  const reqId = useRef(0);
 
   useEffect(() => {
     if (open) {
       setQuery("");
       setResults([]);
+      preloadSearchIndex();
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   }, [open]);
@@ -34,13 +37,16 @@ export function SearchDialog({
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [open, onClose]);
 
-  const handleSearch = useCallback((value: string) => {
+  const handleSearch = useCallback(async (value: string) => {
     setQuery(value);
-    if (value.trim()) {
-      setResults(searchContent(value));
-    } else {
+    if (!value.trim()) {
       setResults([]);
+      return;
     }
+    const id = ++reqId.current;
+    const found = await searchContent(value);
+    // 최신 요청만 반영 (이전 응답이 늦게 도착하는 경우 무시)
+    if (id === reqId.current) setResults(found);
   }, []);
 
   if (!open) return null;
@@ -73,7 +79,7 @@ export function SearchDialog({
             ref={inputRef}
             type="text"
             value={query}
-            onChange={(e) => handleSearch(e.target.value)}
+            onChange={(e) => void handleSearch(e.target.value)}
             placeholder="검색어를 입력하세요..."
             className="flex-1 border-0 bg-transparent px-3 py-3 text-sm outline-none placeholder:text-gray-400"
           />

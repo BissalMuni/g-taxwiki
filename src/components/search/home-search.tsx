@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { searchContent, type SearchResult } from "@/lib/search";
 
@@ -8,10 +8,19 @@ import { searchContent, type SearchResult } from "@/lib/search";
 export function HomeSearch() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
+  /** 비동기 검색 응답 순서 보장용 요청 ID */
+  const reqId = useRef(0);
 
-  const handleSearch = useCallback((value: string) => {
+  const handleSearch = useCallback(async (value: string) => {
     setQuery(value);
-    setResults(value.trim() ? searchContent(value) : []);
+    if (!value.trim()) {
+      setResults([]);
+      return;
+    }
+    const id = ++reqId.current;
+    const found = await searchContent(value);
+    // 최신 요청만 반영
+    if (id === reqId.current) setResults(found);
   }, []);
 
   return (
@@ -33,14 +42,14 @@ export function HomeSearch() {
         <input
           type="text"
           value={query}
-          onChange={(e) => handleSearch(e.target.value)}
+          onChange={(e) => void handleSearch(e.target.value)}
           placeholder="단원명이나 키워드로 검색하세요"
           className="flex-1 border-0 bg-transparent px-3 py-3 text-base outline-none placeholder:text-gray-400 dark:text-gray-100"
         />
         {query && (
           <button
             type="button"
-            onClick={() => handleSearch("")}
+            onClick={() => void handleSearch("")}
             className="shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
             aria-label="입력 지우기"
           >

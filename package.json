@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=4096 next dev -p 3001",
-    "build": "next build",
+    "dev": "pnpm search:index && cross-env NODE_OPTIONS=--max-old-space-size=4096 next dev -p 3001",
+    "build": "pnpm search:index && next build",
     "start": "next start",
     "lint": "next lint",
+    "search:index": "tsx scripts/build-search-index.ts",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
