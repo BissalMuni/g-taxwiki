@@ -15,10 +15,10 @@ export default function RiskBuilding() {
     <div className="space-y-8">
       <p className="text-muted">
         화재위험이 높은 건축물은 소방분 표준세율의 <strong>2배(200%)</strong>, 대형 화재위험 건축물은 <strong>3배(300%)</strong>로
-        중과한다(지법 §146③2·3호). 구체적 범위는 시행령 §138에서 정한다.
+        중과한다(지법 §146③2호·2의2호). 구체적 범위는 시행령 §138에서 정한다.
       </p>
 
-      <CalcBox title="■ 중과 체계 (지법 §146③2·3호)">
+      <CalcBox title="■ 중과 체계 (지법 §146③2호·2의2호)">
         <table style={tbl}>
           <thead>
             <tr>
@@ -36,7 +36,7 @@ export default function RiskBuilding() {
             <tr>
               <td style={{ ...tdHead, color: "#cf1322" }}>대형 화재위험 건축물</td>
               <td style={{ ...tdc, ...red }}>표준세율 × 300%</td>
-              <td style={td}>지법 §146③3호 · 영§138②</td>
+              <td style={td}>지법 §146③2의2호 · 영§138②</td>
             </tr>
           </tbody>
         </table>
