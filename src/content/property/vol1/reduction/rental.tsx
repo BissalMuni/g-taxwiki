@@ -10,8 +10,9 @@ const tdc = { ...td, textAlign: "center" as const };
 
 /** 임대주택 전용면적별 재산세 감면 (지특법 §31) */
 const rows: [string, string][] = [
-  ["전용 60㎡ 이하", "면제 (100%)"],
-  ["전용 60㎡ 초과 85㎡ 이하", "50% 경감"],
+  ["전용 40㎡ 이하", "면제 (100%)"],
+  ["전용 40㎡ 초과 60㎡ 이하", "50% 경감"],
+  ["전용 60㎡ 초과 85㎡ 이하", "25% 경감"],
 ];
 
 export default function Rental() {
@@ -58,7 +59,7 @@ export default function Rental() {
           </ul>
         </SubSection>
         <Insight>
-          §31은 <strong>공공·일반 임대주택</strong>에 대한 면적별 차등(60㎡ 이하 면제, 85㎡ 이하 50%) 감면이고,
+          §31은 <strong>공공·일반 임대주택</strong>에 대한 면적별 차등(40㎡ 이하 면제, 60㎡ 이하 50%, 85㎡ 이하 25%) 감면이고,
           장기일반민간임대주택의 <strong>장기 임대 추가 혜택</strong>은 §31의3에서 별도로 규정한다(다음 단원).
         </Insight>
       </CalcBox>
