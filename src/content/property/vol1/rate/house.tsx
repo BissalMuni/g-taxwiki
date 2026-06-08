@@ -55,12 +55,6 @@ const lnk = { color: "#1890ff", textDecoration: "none" as const };
 export default function RateHouse() {
   return (
     <div className="space-y-8">
-      <p className="text-muted">
-        주택분 재산세는 <strong>4단계 초과누진세율</strong>을 적용한다. 공시가격 9억원 이하 1세대 1주택자에게는
-        구간별 세율을 0.05%p 인하한 <strong>특례세율</strong>을 적용한다(
-        <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>지법 §111의2</a>).
-      </p>
-
       <CalcBox title="■ 일반 주택 — 4단계 초과누진">
         <p className="text-muted">
           주택별로 아래 세율을 적용한다. 2인 이상 공동소유이거나 토지·건물 소유자가 다른 경우, 토지·건물 가액을 합산한
