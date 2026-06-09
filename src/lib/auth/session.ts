@@ -4,6 +4,7 @@ import { type Role, ROLES } from "./constants";
 /** 쿠키에서 Supabase 세션 읽기 (Server Component / Route Handler 용) */
 export async function getSessionFromCookies(): Promise<{
   role: Role;
+  userId: string;
 } | null> {
   const supabase = await createSupabaseServerClient();
   const {
@@ -18,5 +19,5 @@ export async function getSessionFromCookies(): Promise<{
   const role = (payload.user_role ?? session.user.app_metadata?.user_role ?? "reader") as Role;
   if (!ROLES.includes(role)) return null;
 
-  return { role };
+  return { role, userId: session.user.id };
 }

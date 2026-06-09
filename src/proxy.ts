@@ -69,10 +69,12 @@ export async function proxy(request: NextRequest) {
     if (ROLES.includes(r)) role = r;
   }
 
-  // x-user-role 헤더 주입 (외부 위조 방지)
+  // x-user-role / x-user-id 헤더 주입 (외부 위조 방지)
   const requestHeaders = new Headers(request.headers);
   requestHeaders.delete("x-user-role");
+  requestHeaders.delete("x-user-id");
   if (role) requestHeaders.set("x-user-role", role);
+  if (session) requestHeaders.set("x-user-id", session.user.id);
 
   // 콘텐츠 경로 보호 — 로그인 필수
   if (isContentPage && !session) {

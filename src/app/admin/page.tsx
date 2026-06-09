@@ -46,6 +46,17 @@ export default async function AdminPage() {
           </Link>
         )}
 
+        {/* admin 이상: 사용자 권한 관리 */}
+        {hasPermission(role, "view_audit") && (
+          <Link
+            href="/admin/users"
+            className="rounded-lg border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
+          >
+            <h2 className="font-semibold">사용자 권한 관리</h2>
+            <p className="text-sm text-gray-500">가입자 역할 조회·권한 상승</p>
+          </Link>
+        )}
+
         {/* subadmin 이상: 일정 관리 */}
         {hasPermission(role, "edit_structure") && (
           <Link
