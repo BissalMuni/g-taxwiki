@@ -81,13 +81,14 @@ export default function RateHouse() {
             <li>형식적 세대분리를 통한 편법 1주택 보유자 → 특례 <strong>제외</strong></li>
             <li>65세 이상 직계존속 봉양 합가 → <strong>독립 세대</strong> 인정</li>
             <li>국외이주 후 친지 세대에 형식상 주소를 둔 경우 → <strong>독립 세대</strong> 인정</li>
+            <li>외국인이 「주민등록법」에 따라 주민등록표에 기재된 경우 → 내국인과 동일하게 <strong>1세대 구성원</strong> 인정, 1세대 1주택 특례 적용 가능 (행안부 부동산세제과, 재산세 특례세율 관련 주요 질문 답변, 2021. 5.)</li>
           </ul>
         </SubSection>
 
         <SubSection title="● 주택 수 산정 — 제외 대상 (영 §110의2②③)">
           <p>각 세대원 소유 주택 수를 합산하되(지분·부속토지만 소유해도 1주택), 아래는 <strong>제외</strong>한다.</p>
           <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
-            <li>상속주택: 상속개시일부터 <strong>5년</strong> (이후 주된 상속인 지분 기준)</li>
+            <li>상속주택: 상속개시일부터 <strong>5년</strong> (조합원입주권·주택분양권을 상속받아 취득한 신축주택 포함, 이후 주된 상속인 지분 기준)</li>
             <li>사원주택·가정어린이집·문화재주택·임대등록주택 (사업용·투기 무관)</li>
             <li>혼인 전 소유 주택: 혼인일부터 <strong>5년</strong></li>
             <li>권원 없는 자가 무단건축하여 사용하는 주택</li>
