@@ -59,11 +59,76 @@ export default function BequestV10() {
       <Insight>
 
       <ul className="list-disc pl-6 my-4 space-y-1">
-        <li><strong>포괄유증</strong>은 상속으로 봄 (조심2015지1855)</li>
+        <li><strong>포괄유증</strong>은 상속으로 봄 (<a href="https://www.olta.re.kr/explainInfo/judgeDecisionDetail.do?num=60081231" target="_blank" rel="noopener noreferrer">조심2015지1855</a>)</li>
         <li><strong>유언공정증서</strong>가 상속분할협의서나 증여계약서를 대신함</li>
       </ul>
 
       </Insight>
+
+      <SubSection title="● 조심2022지0709 (2023.9.5.) — 계모자 관계 포괄유증">
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>① 사실관계</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>유증자(계모) 2021.3.9. 사망, 청구인 BBB은 계자(민법상 상속인 아님)</li>
+          <li>청구인들이 오랜 기간 유증자 부양(생활비·병원비·간병비)</li>
+          <li>쟁점부동산 = 유증자 재산의 대부분(삶의 터전)</li>
+          <li>교회·시동생 유증분은 유증자가 생전에 이미 이행 완료 → 해당 부분 철회</li>
+          <li>코로나·외국 국적 상속인 존재로 유언검인이 2021.9.30.에야 완료</li>
+        </ul>
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>② 처분청 주장 (특정유증)</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>청구인들은 상속인이 아니므로 포괄유증 수유자가 될 수 없다는 주장</li>
+          <li>일정 비율로 유증받은 것이 아님</li>
+          <li>교회·시동생에게 별도 유증 → 특정유증</li>
+          <li>조정대상지역 주택, 시가표준액 3억 이상 → 중과세율(1/1000·120) 적용 주장</li>
+        </ul>
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>③ 청구인 주장 (포괄유증)</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>교회·시동생 유증분은 생전 이행 완료 → 해당 유언 부분 철회</li>
+          <li>잔여 유언: 부동산 전부 + &quot;남은 것 있다면 1/2&quot; → 실질 포괄</li>
+          <li>상속세·장례비·공과금 전부 청구인들이 부담</li>
+          <li>유언검인 지연은 법원 전권사항 → 가산세 면제 정당한 사유</li>
+        </ul>
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>④ 조심 판단 → 부과처분 전부 취소</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>쟁점부동산 = 유증자 재산의 대부분 → 실질적 상속 의사 반영</li>
+          <li>금융재산은 상속세·장례비 충당에 쓰였을 가능성 높음</li>
+          <li>유언장 전체 표현 + 법정상속인들이 법정에서 이의 없다고 진술</li>
+          <li>포괄유증 인정 → 중과세율(1/1000·120) 아닌 상속세율(1/1000·28) 적용</li>
+        </ul>
+      </SubSection>
+
+      <SubSection title="● 조심2015지1855 (2017.5.2.) — 외국인 사실혼 배우자 포괄유증">
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>① 사실관계</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>유증자: 한국 국적 상실 후 외국 국적 취득</li>
+          <li>청구인: 외국 국적 사실혼 배우자, 두 자녀 공동 출생(민법상 상속인 아님)</li>
+          <li>제1부동산 단독 유증 + 제2부동산 4/2 지분 유증</li>
+          <li>국내 잔여재산 전부를 청구인에게 유증, 세금·채무·장례비 청구인이 부담</li>
+          <li>국제사법 적용 여부가 별도 쟁점으로 추가됨</li>
+        </ul>
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>② 처분청 주장 (특정유증)</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>청구인은 유언장에 &quot;친구&quot; 및 &quot;유언집행자 겸 관리인&quot;으로 표시됨</li>
+          <li>국외에 다른 재산 존재 → 포괄유증 해당 불가</li>
+          <li>사실혼 배우자는 민법상 상속인 아님 → 국내 강행규정 적용</li>
+          <li>조세형평상 외국인에게만 상속세율 적용 불가</li>
+        </ul>
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>③ 청구인 주장 (포괄유증)</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>국내 재산을 청구인·자녀에게 비율로 유증 → 포괄유증</li>
+          <li>세금·채무·장례비·유언집행비용 청구인이 전부 부담</li>
+          <li>국제사법 §49: 피상속인 본국법 적용 시 사실혼 배우자도 상속인</li>
+          <li>유언집행 절차 복잡 → 60일 내 신고 사실상 불가 → 가산세 면제 주장</li>
+        </ul>
+        <p style={{fontWeight: 'bold', marginTop: '12px'}}>④ 조심 판단 → 경정청구 거부처분 취소</p>
+        <ul className="list-disc pl-6 my-2 space-y-1">
+          <li>비상속인도 포괄유증이면 상속에 해당(민법 §1078)</li>
+          <li>국내 재산 한정하여 비율 유증 구조 인정</li>
+          <li>잔여재산 포괄 지정 + 채무 전부 승계 → 포괄유증</li>
+          <li>개별 재산 표시만으로 특정유증 단정 불가(대법원 78다1816)</li>
+          <li>포괄유증 인정 → 무상취득세율(1/1000·35) 아닌 상속세율(1/1000·28) 적용</li>
+        </ul>
+      </SubSection>
 
       </CalcBox>
 
