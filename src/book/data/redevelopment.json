@@ -1,0 +1,69 @@
+{
+  "id": "redevelopment",
+  "basePath": "redevelopment",
+  "title": "정비사업 취득세",
+  "description": "재개발·재건축 등 정비사업 관련 취득세 운영 실무",
+  "children": [
+    {
+      "id": "redev-overview",
+      "slug": "overview",
+      "title": "1장. 정비사업 개요",
+      "children": [
+        { "id": "redev-overview-types", "slug": "types", "title": "Ⅰ. 정비사업의 종류" },
+        { "id": "redev-overview-terms", "slug": "terms", "title": "Ⅱ. 용어 정의" },
+        { "id": "redev-overview-tax-summary", "slug": "tax-summary", "title": "Ⅲ. 정비사업 과세 요약" },
+        { "id": "redev-overview-redevelopment-project", "slug": "redevelopment-project", "title": "Ⅳ. 재개발정비사업" },
+        { "id": "redev-overview-reconstruction", "slug": "reconstruction", "title": "Ⅴ. 재건축사업" },
+        { "id": "redev-overview-small-scale", "slug": "small-scale", "title": "Ⅵ. 소규모정비사업" },
+        { "id": "redev-overview-urban-development", "slug": "urban-development", "title": "Ⅶ. 도시개발사업" },
+        { "id": "redev-overview-regional-housing", "slug": "regional-housing", "title": "Ⅷ. 지역주택조합" }
+      ]
+    },
+    {
+      "id": "redev-amendments",
+      "slug": "amendments",
+      "title": "2장. 개정법령 적용요령",
+      "children": [
+        { "id": "redev-amendments-2026", "slug": "2026", "title": "Ⅰ. 2026년 개정" },
+        { "id": "redev-amendments-2025", "slug": "2025", "title": "Ⅱ. 2025년 개정" },
+        { "id": "redev-amendments-2023", "slug": "2023", "title": "Ⅲ. 2023년 개정" },
+        { "id": "redev-amendments-2020", "slug": "2020", "title": "Ⅳ. 2020년 개정" },
+        { "id": "redev-amendments-2018", "slug": "2018", "title": "Ⅴ. 2018년 개정" },
+        { "id": "redev-amendments-2017", "slug": "2017", "title": "Ⅵ. 2017년 개정" },
+        { "id": "redev-amendments-2016", "slug": "2016", "title": "Ⅶ. 2016년 개정" }
+      ]
+    },
+    {
+      "id": "redev-tax-base",
+      "slug": "tax-base",
+      "title": "3장. 과세표준 포함여부",
+      "children": [
+        { "id": "redev-tax-base-inclusion-table", "slug": "inclusion-table", "title": "Ⅰ. 과세표준 포함여부 표" },
+        { "id": "redev-tax-base-cases", "slug": "cases", "title": "Ⅱ. 유권해석 및 사례" }
+      ]
+    },
+    {
+      "id": "redev-issues",
+      "slug": "issues",
+      "title": "4장. 정비사업 주요 현안",
+      "children": [
+        { "id": "redev-issues-tax-base", "slug": "tax-base", "title": "Ⅰ. 정비사업 과세표준" },
+        { "id": "redev-issues-donation-vs-contribution", "slug": "donation-vs-contribution", "title": "Ⅱ. 무상양여 대 기부채납" },
+        { "id": "redev-issues-non-member-land-timing", "slug": "non-member-land-timing", "title": "Ⅲ. 비조합원용 토지 취득시기" },
+        { "id": "redev-issues-reserve-land", "slug": "reserve-land", "title": "Ⅳ. 사업시행 중 체비지·보류지" },
+        { "id": "redev-issues-member-share-increase", "slug": "member-share-increase", "title": "Ⅴ. 조합원의 토지지분 증가에 따른 과세" },
+        { "id": "redev-issues-regional-housing-tax", "slug": "regional-housing-tax", "title": "Ⅵ. 지역주택조합 과세" }
+      ]
+    },
+    {
+      "id": "redev-reference",
+      "slug": "reference",
+      "title": "5장. 관련 법령·현황 (참고)",
+      "children": [
+        { "id": "redev-reference-local-tax-act", "slug": "local-tax-act", "title": "Ⅰ. 지방세법" },
+        { "id": "redev-reference-local-tax-special-act", "slug": "local-tax-special-act", "title": "Ⅱ. 지방세특례제한법" },
+        { "id": "redev-reference-seoul-status", "slug": "seoul-status", "title": "Ⅲ. 서울 정비사업 현황" }
+      ]
+    }
+  ]
+}
