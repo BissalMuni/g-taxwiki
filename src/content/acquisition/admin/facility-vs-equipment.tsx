@@ -428,7 +428,6 @@ export default function FacilityVsEquipmentV10() {
           </CalcBox>
 
           <CalcBox title="■ 공동주택 승강기 개수 취득세 실무 적용기준">
-            <p>조심2009지0850과 행안부 지방세운영과-3555(2010.8.13.)로 정립된 법리를 강남구청 재산세과 실무에 적용한 기준은 다음과 같다.</p>
             <table style={{width: "100%", borderCollapse: "collapse", fontSize: "var(--content-font-size, 13px)", marginTop: "12px", marginBottom: "16px"}}>
               <thead>
                 <tr style={{backgroundColor: "#f0f0f0"}}>
