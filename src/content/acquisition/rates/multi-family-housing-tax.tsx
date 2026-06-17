@@ -48,9 +48,7 @@ export default function MultiFamilyHousingTaxV10() {
           <Insight>
           <p><strong>예외</strong>: 건축물관리대장 우측 상단에 <strong>가구수가 나뉘어</strong> 있는 것이 확인되면 임대차계약서 없이 감면처리 가능</p>
           </Insight>
-        </SubSection>
 
-        <SubSection title="● 세무종합 입력 방법">
           <ul className="list-disc pl-6 my-4 space-y-1">
             <li>다가구 신축 입력시 <strong>가구별로 안분</strong>하여 대장입력</li>
             <li>매매시 <strong>가구당 전용면적 기준</strong>으로 자동 농특세 적용 계산됨</li>
