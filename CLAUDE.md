@@ -212,13 +212,9 @@ When adding a new component, place it in the matching domain folder. If no exist
 - `src/lib/automation/` — Claude runner, resolver
 - `scripts/run-pipeline.ts` — 댓글 → 콘텐츠 수정 실행
 
-## Sister Project — math
+## Independent Project
 
-`d:\Coding\math`는 이 프로젝트의 **원본 자매 프로젝트**로, 동일한 4계층 아키텍처(basket → book → content → map)를 공유한다.
-
-- **구조 동기화 필수**: 한쪽에서 아키텍처·공통 로직(타입, 유틸, 인증, 관리자 등)을 변경하면 다른 쪽도 반영해야 한다.
-- **상호 파일 수정 권한 있음**: 이 프로젝트에서 작업 중이더라도 `math`의 파일을 직접 읽고 수정할 수 있다.
-- **공통 경로**: 두 프로젝트 모두 `src/basket/`, `src/book/`, `src/map/` 동일 (basket·book·map은 도메인 핵심이므로 lib 하위가 아닌 src 루트에 위치)
+이 프로젝트는 **독립적으로 운영**된다. 다른 프로젝트(예: `math`)와의 구조 동기화 의무는 없으며, 모든 변경은 이 저장소 기준으로만 판단·적용한다. 필요 시 다른 프로젝트의 파일을 **읽고 수정하는 것은 가능**하지만, 한쪽의 변경을 다른 쪽에 자동으로 반영(동기화)할 의무는 없다.
 
 ## Rules
 
