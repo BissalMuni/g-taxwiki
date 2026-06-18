@@ -93,12 +93,6 @@ export default function InheritanceFilingV10() {
       </tbody>
       </table>
 
-      <p><strong>간단암기법</strong>: <code className="bg-gray-100 px-1 rounded text-sm">&lt;망가기, 특상가등&gt;</code></p>
-      <ul className="list-disc pl-6 my-4 space-y-1">
-        <li>일반상속시: <strong>망</strong>(자 기준) - <strong>가</strong>(족관계증명), <strong>기</strong>(본증명)</li>
-        <li>세율특례 시 추가서류: <strong>상</strong>(속인 기준) - <strong>가</strong>(족관계증명), <strong>등</strong>(본)</li>
-      </ul>
-
       </CalcBox>
 
       <hr className="my-6" />
@@ -140,10 +134,6 @@ export default function InheritanceFilingV10() {
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>가족관계증명서(상속인)</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>직계존비속 확인 (2008년 이전 사망은 제적등본)</td>
-      </tr>
-      <tr>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>등본(상속인)</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>생계를 같이하는 가족확인 (등본에 있으면 처남처제도 가족)</td>
       </tr>
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>1가구1주택상속 감면 신청서</td>
