@@ -55,7 +55,7 @@ export default function ChildcareFacilityV10() {
         <p style={{fontSize: 'var(--content-font-size, 13px)', color: '#666', marginTop: '8px'}}>
           ※ ②의 "대통령령으로 정하는 사업주"란{' '}
           <a href="https://law.go.kr/법령/영유아보육법시행령/제20조" target="_blank" rel="noopener noreferrer">영유아보육법 시행령 §20⑤</a>에 따른 사업주
-          (지특법 시행령 §8의3①)
+          (<a href="https://law.go.kr/법령/지방세특례제한법시행령/제8조의3" target="_blank" rel="noopener noreferrer">지특법 시행령 §8의3①</a>)
         </p>
       </CalcBox>
 
