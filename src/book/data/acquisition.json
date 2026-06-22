@@ -198,100 +198,6 @@
       ]
     },
     {
-      "id": "acq-filing",
-      "slug": "filing",
-      "title": "신고",
-      "children": [
-        {
-          "id": "acq-filing-general-purchase",
-          "slug": "general-purchase",
-          "title": "일반 매매"
-        },
-        {
-          "id": "acq-filing-presale-filing",
-          "slug": "presale-filing",
-          "title": "분양권 취득"
-        },
-        {
-          "id": "acq-filing-reconstruction-redevelopment",
-          "slug": "reconstruction-redevelopment",
-          "title": "재건축/재개발"
-        },
-        {
-          "id": "acq-filing-inheritance-filing",
-          "slug": "inheritance-filing",
-          "title": "상속",
-          "children": [
-            {
-              "id": "acq-filing-inheritance-filing-yuryubun",
-              "slug": "yuryubun",
-              "title": "유류분"
-            }
-          ]
-        },
-        {
-          "id": "acq-filing-bequest",
-          "slug": "bequest",
-          "title": "유증"
-        },
-        {
-          "id": "acq-filing-gift",
-          "slug": "gift",
-          "title": "증여"
-        },
-        {
-          "id": "acq-filing-gift-with-encumbrance",
-          "slug": "gift-with-encumbrance",
-          "title": "부담부증여"
-        },
-        {
-          "id": "acq-filing-housing-land-only-gift",
-          "slug": "housing-land-only-gift",
-          "title": "주택/토지 단독 증여"
-        },
-        {
-          "id": "acq-filing-divorce-property-division",
-          "slug": "divorce-property-division",
-          "title": "이혼재산분할"
-        },
-        {
-          "id": "acq-filing-land-expropriation",
-          "slug": "land-expropriation",
-          "title": "토지수용"
-        },
-        {
-          "id": "acq-filing-exchange-acquisition",
-          "slug": "exchange-acquisition",
-          "title": "교환"
-        },
-        {
-          "id": "acq-filing-co-ownership-partition",
-          "slug": "co-ownership-partition",
-          "title": "공유물분할"
-        },
-        {
-          "id": "acq-filing-auction-acquisition",
-          "slug": "auction-acquisition",
-          "title": "경매"
-        },
-        {
-          "id": "acq-filing-court-judgment",
-          "slug": "court-judgment",
-          "title": "법원판결"
-        },
-        {
-          "id": "acq-filing-new-construction",
-          "slug": "new-construction",
-          "title": "신축"
-        },
-        {
-          "id": "acq-filing-vessel-acquisition",
-          "slug": "vessel-acquisition",
-          "title": "선박취득"
-        }
-      ]
-    },
-    {
       "id": "acq-admin",
       "slug": "admin",
       "title": "실무",
@@ -335,6 +241,99 @@
           "id": "acq-admin-property-inquiry-response",
           "slug": "property-inquiry-response",
           "title": "재산조회 회신"
+        }
+      ]
+    },
+    {
+      "id": "acq-filing",
+      "slug": "filing",
+      "title": "신고",
+      "children": [
+        {
+          "id": "acq-filing-general-purchase",
+          "slug": "general-purchase",
+          "title": "일반 매매"
+        },
+        {
+          "id": "acq-filing-presale-filing",
+          "slug": "presale-filing",
+          "title": "분양권 취득"
+        },
+        {
+          "id": "acq-filing-reconstruction-redevelopment",
+          "slug": "reconstruction-redevelopment",
+          "title": "재건축/재개발"
+        },
+        {
+          "id": "acq-filing-new-construction",
+          "slug": "new-construction",
+          "title": "신축"
+        },
+        {
+          "id": "acq-filing-inheritance-filing",
+          "slug": "inheritance-filing",
+          "title": "상속",
+          "children": []
+        },
+        {
+          "id": "acq-filing-yuryubun",
+          "slug": "yuryubun",
+          "title": "유류분"
+        },
+        {
+          "id": "acq-filing-bequest",
+          "slug": "bequest",
+          "title": "유증"
+        },
+        {
+          "id": "acq-filing-gift",
+          "slug": "gift",
+          "title": "증여"
+        },
+        {
+          "id": "acq-filing-gift-with-encumbrance",
+          "slug": "gift-with-encumbrance",
+          "title": "부담부증여"
+        },
+        {
+          "id": "acq-filing-housing-land-only-gift",
+          "slug": "housing-land-only-gift",
+          "title": "주택/토지 단독 증여"
+        },
+        {
+          "id": "acq-filing-divorce-property-division",
+          "slug": "divorce-property-division",
+          "title": "이혼재산분할"
+        },
+        {
+          "id": "acq-filing-co-ownership-partition",
+          "slug": "co-ownership-partition",
+          "title": "공유물분할"
+        },
+        {
+          "id": "acq-filing-land-expropriation",
+          "slug": "land-expropriation",
+          "title": "토지수용"
+        },
+        {
+          "id": "acq-filing-exchange-acquisition",
+          "slug": "exchange-acquisition",
+          "title": "교환"
+        },
+        {
+          "id": "acq-filing-court-judgment",
+          "slug": "court-judgment",
+          "title": "법원판결"
+        },
+        {
+          "id": "acq-filing-auction-acquisition",
+          "slug": "auction-acquisition",
+          "title": "경매"
+        },
+        {
+          "id": "acq-filing-vessel-acquisition",
+          "slug": "vessel-acquisition",
+          "title": "선박취득"
         }
       ]
     }
