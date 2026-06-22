@@ -220,7 +220,14 @@
         {
           "id": "acq-filing-inheritance-filing",
           "slug": "inheritance-filing",
-          "title": "상속"
+          "title": "상속",
+          "children": [
+            {
+              "id": "acq-filing-inheritance-filing-yuryubun",
+              "slug": "yuryubun",
+              "title": "유류분"
+            }
+          ]
         },
         {
           "id": "acq-filing-bequest",
