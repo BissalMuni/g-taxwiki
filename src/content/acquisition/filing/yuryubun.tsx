@@ -6,13 +6,13 @@ export default function Yuryubun() {
   return (
     <div className="space-y-8">
       <p className="text-muted">유류분반환청구소송의 확정판결·조정에 따라 상속재산을 이전받는 경우의 신고 절차, 적용 세율 및 제출서류 안내.</p>
-      <p className="text-muted text-sm">근거: 지방세법 §7⑬, §20①, 행안부 도세과-115(2008.3.20), 행안부 지방세운영과-364(2015.2.1)</p>
+      <p className="text-muted text-sm">근거: <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §7⑬, §20①</a>, 행안부 도세과-115(2008.3.20), 행안부 지방세운영과-364(2015.2.1)</p>
 
       <CalcBox title="■ 취득유형 및 적용세율">
         <SubSection title="● 상속 의제 대상">
           <ul className="list-disc pl-6 space-y-1">
             <li>대상: 유류분반환청구소송 판결·조정으로 당초 상속인 → 다른 상속인에게 이전되는 부동산</li>
-            <li>원칙은 증여에 의한 취득이나, 지방세법 §7⑬ 제2호에 해당하여 상속에 의한 취득으로 의제</li>
+            <li>원칙은 증여에 의한 취득이나, <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §7⑬</a> 제2호에 해당하여 상속에 의한 취득으로 의제</li>
             <li>취득시기: 상속개시일 (피상속인 사망일) — 확정판결일 아님</li>
           </ul>
         </SubSection>
@@ -32,13 +32,13 @@ export default function Yuryubun() {
                 <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>취득세</td>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>3.5%</td>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px', color: '#52c41a', fontWeight: 'bold'}}>2.8% ✅</td>
-                <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지방세법 §11①7호 (상속)</td>
+                <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §11①7호</a> (상속)</td>
               </tr>
               <tr>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>등록면허세</td>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>—</td>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px', color: '#52c41a', fontWeight: 'bold'}}>0.8% ✅</td>
-                <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지방세법 §28①1호 나목</td>
+                <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §28①1호 나목</a></td>
               </tr>
             </tbody>
           </table>
@@ -74,7 +74,7 @@ export default function Yuryubun() {
                 <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center'}}>3호</td>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>채권자대위권 행사로 법정상속분 등기 후 협의분할 재분할</td>
                 <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#52c41a', fontWeight: 'bold'}}>✅ O</td>
-                <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>민법 §404에 따른 채권자대위권 행사</td>
+                <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/민법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">민법 §404</a>에 따른 채권자대위권 행사</td>
               </tr>
             </tbody>
           </table>
@@ -83,8 +83,8 @@ export default function Yuryubun() {
 
         <Insight>
           <ul className="list-disc pl-6 space-y-1">
-            <li>민사소송법 §220에 따른 법원 조정조서도 확정판결과 동일한 효력 → 상속으로 봄</li>
-            <li>유류분권자 입장: 피상속인이 아니라 당초 상속인으로부터 취득하는 형식이나, §7⑬ 2호에 의해 상속에 의한 취득으로 의제</li>
+            <li><a href="https://www.law.go.kr/법령/민사소송법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">민사소송법 §220</a>에 따른 법원 조정조서도 확정판결과 동일한 효력 → 상속으로 봄</li>
+            <li>유류분권자 입장: 피상속인이 아니라 당초 상속인으로부터 취득하는 형식이나, <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">§7⑬</a> 2호에 의해 상속에 의한 취득으로 의제</li>
           </ul>
         </Insight>
       </CalcBox>
@@ -127,7 +127,7 @@ export default function Yuryubun() {
         <SubSection title="● 신고·납부기한">
           <ul className="list-disc pl-6 space-y-1">
             <li>기산일: 상속개시일이 속하는 달의 말일</li>
-            <li>기한: 기산일로부터 6개월 (외국 주소를 둔 상속인이 있는 경우 9개월) — 지방세법 §20①</li>
+            <li>기한: 기산일로부터 6개월 (외국 주소를 둔 상속인이 있는 경우 9개월) — <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §20①</a></li>
           </ul>
         </SubSection>
 
@@ -204,32 +204,32 @@ export default function Yuryubun() {
           <tbody>
             <tr>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법령</td>
-              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지방세법 §7⑬</td>
+              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §7⑬</a></td>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>상속 의제 3가지 사유 (재분할·상속회복청구·채권자대위)</td>
             </tr>
             <tr>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법령</td>
-              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지방세법 §20①</td>
+              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §20①</a></td>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>상속취득 신고기한 6개월(외국 9월)</td>
             </tr>
             <tr>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법령</td>
-              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지방세법 §11①7호</td>
+              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §11①7호</a></td>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>상속 취득세율 2.8%</td>
             </tr>
             <tr>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법령</td>
-              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지방세법 §28①1호 나목</td>
+              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">지방세법 §28①1호 나목</a></td>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>상속 등록면허세율 0.8%</td>
             </tr>
             <tr>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법령</td>
-              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>민법 §404</td>
+              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/민법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">민법 §404</a></td>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>채권자대위권</td>
             </tr>
             <tr>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>법령</td>
-              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>민법 §1112조</td>
+              <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/민법" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">민법 §1112조</a></td>
               <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>유류분 비율</td>
             </tr>
             <tr>
