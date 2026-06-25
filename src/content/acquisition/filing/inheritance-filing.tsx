@@ -59,9 +59,10 @@ export default function InheritanceFilingV10() {
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>상속재산분할협의서</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontSize: '12px'}}>
       • 검인 불필요<br/>
-      • 상속대상자 전원 기재, 도장 또는 서명 여부 확인<br/>
+      • 상속대상자 전원 기재, 도장 또는 서명 확인<br/>
       • 상속인 사망한 경우 <strong>대습상속</strong> 여부 확인<br/>
-      • 미성년자 협의여부 (특별대리인 선임 필요)
+      • 미성년자 협의여부 (특별대리인 선임 필요)<br/>
+      • 양식 → <a href="https://www.iros.go.kr/index.jsp" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">대법원 인터넷등기소</a> [고객센터] 탭 → [첨부서면예시] → 협의서로 검색
       </td>
       </tr>
       <tr>
@@ -69,7 +70,7 @@ export default function InheritanceFilingV10() {
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontSize: '12px'}}>
       상속자가 단독이거나 재산분할협의가 안되면 <strong>법정상속지분</strong>으로 취득신고 가능<br/>
       → 상속재산분할협의서 필요없음<br/>
-      <strong>법정지분율</strong>: 배우자 1.5 : 자녀 1
+      <a href="https://law.go.kr/법령/민법/제1009조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline"><strong>법정지분율</strong></a>: 배우자 1.5 : 자녀 1
       </td>
       </tr>
       <tr>
@@ -116,7 +117,7 @@ export default function InheritanceFilingV10() {
       <tr style={{backgroundColor: '#e6f7ff'}}>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>1가구1주택 상속감면</td>
       <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', color: '#52c41a'}}>0.8%</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>취득분 2% 감면, 농특세 비과세</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>취득분 2% 감면, 농특세 비과세(<a href="https://law.go.kr/법령/농어촌특별세법/제4조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">농특세법 §4</a>)</td>
       </tr>
       </tbody>
       </table>
@@ -302,7 +303,7 @@ export default function InheritanceFilingV10() {
       </tr>
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>해외 주소 상속인 있는 경우</td>
-      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><strong>9개월 이내</strong></td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><strong>9개월 이내</strong><br/><span style={{fontSize: '12px', color: '#666'}}>외국인 상속인 포함 시 <strong>아포스티유</strong> 첨부 필요 (등기 시)</span></td>
       </tr>
       <tr>
       <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>실종의 경우</td>
@@ -310,6 +311,35 @@ export default function InheritanceFilingV10() {
       </tr>
       </tbody>
       </table>
+
+      <SubSection title="● 아포스티유(Apostille) 안내">
+
+      <p><strong>아포스티유(프: Apostille)</strong>는 해외 영사관 등 권한 당국에서 발급하는 문서 공증·인증 확인서로, 헤이그 협약(1961) 가입국 간 공문서의 해외 사용을 위한 국제 인증 절차입니다.</p>
+
+      <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px', marginTop: '8px'}}>
+      <thead>
+      <tr style={{backgroundColor: '#f0f0f0'}}>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '120px'}}>항목</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>내용</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>개념</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>외국에서 발급된 공문서가 진정한 문서임을 발급국 당국이 확인해 주는 인증 절차. 별도 영사 인증 없이 가입국 간 공식 효력 인정.</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>발급처</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>해당 문서 발급국의 권한 있는 당국 (예: 한국 문서의 경우 외교부 또는 시·도지사)</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>상속 실무</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>외국인 상속인의 본국 발급 신분서류(출생증명서, 혼인증명서 등)를 국내 등기·취득세 신고에 사용할 때 아포스티유 첨부 필요</td>
+      </tr>
+      </tbody>
+      </table>
+
+      </SubSection>
 
       </CalcBox>
 
