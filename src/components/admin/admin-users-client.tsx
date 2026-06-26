@@ -20,6 +20,8 @@ interface Props {
 
 /** 역할 뱃지 색상 */
 const ROLE_BADGE: Record<Role, string> = {
+  pending:
+    "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300",
   reader:
     "bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300",
   editor:
@@ -46,12 +48,14 @@ export function AdminUsersClient({ currentUserId, currentUserRole }: Props) {
   const [feedback, setFeedback] = useState<
     Record<string, { type: "ok" | "err"; msg: string }>
   >({});
+  /** 승인 대기 사용자에게 부여할 역할 선택 (기본 reader) */
+  const [approveRole, setApproveRole] = useState<Record<string, Role>>({});
 
   const myRank = roleRank(currentUserRole);
 
-  /** 관리자가 부여할 수 있는 역할 목록 (자기 역할 이하만) */
+  /** 관리자가 부여할 수 있는 역할 목록 (자기 역할 이하, pending 제외) */
   const assignableRoles = useMemo(
-    () => ROLES.filter((r) => roleRank(r) <= myRank),
+    () => ROLES.filter((r) => r !== "pending" && roleRank(r) <= myRank),
     [myRank]
   );
 
@@ -129,13 +133,26 @@ export function AdminUsersClient({ currentUserId, currentUserRole }: Props) {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return users;
-    return users.filter(
-      (u) =>
-        (u.username ?? "").toLowerCase().includes(q) ||
-        (u.display_name ?? "").toLowerCase().includes(q)
-    );
+    const base = !q
+      ? users
+      : users.filter(
+          (u) =>
+            (u.username ?? "").toLowerCase().includes(q) ||
+            (u.display_name ?? "").toLowerCase().includes(q)
+        );
+    // 승인 대기(pending)를 최상단으로
+    return [...base].sort((a, b) => {
+      const ap = a.role === "pending" ? 0 : 1;
+      const bp = b.role === "pending" ? 0 : 1;
+      return ap - bp;
+    });
   }, [users, query]);
+
+  /** 승인 대기 인원 수 */
+  const pendingCount = useMemo(
+    () => users.filter((u) => u.role === "pending").length,
+    [users]
+  );
 
   return (
     <div className="space-y-4">
@@ -164,6 +181,13 @@ export function AdminUsersClient({ currentUserId, currentUserRole }: Props) {
       {error && (
         <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600 dark:border-red-900/40 dark:bg-red-900/20 dark:text-red-300">
           {error}
+        </div>
+      )}
+
+      {pendingCount > 0 && (
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-900/40 dark:bg-amber-900/20 dark:text-amber-300">
+          승인 대기 중인 가입자가 <b>{pendingCount}</b>명 있습니다. 역할을
+          선택하고 <b>승인</b>하면 읽기 권한이 부여됩니다.
         </div>
       )}
 
@@ -232,6 +256,49 @@ export function AdminUsersClient({ currentUserId, currentUserRole }: Props) {
                           ? "본인은 변경 불가"
                           : "상위 권한자는 변경 불가"}
                       </span>
+                    ) : u.role === "pending" ? (
+                      // 승인 대기 — 부여할 역할 선택 후 승인
+                      <div className="flex items-center gap-2">
+                        <select
+                          value={approveRole[u.id] ?? "reader"}
+                          disabled={pending[u.id]}
+                          onChange={(e) =>
+                            setApproveRole((p) => ({
+                              ...p,
+                              [u.id]: e.target.value as Role,
+                            }))
+                          }
+                          className="rounded border border-gray-300 bg-white px-2 py-1 text-sm disabled:opacity-50 dark:border-gray-600 dark:bg-gray-900"
+                        >
+                          {assignableRoles.map((r) => (
+                            <option key={r} value={r}>
+                              {ROLE_LABELS[r]}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          type="button"
+                          disabled={pending[u.id]}
+                          onClick={() =>
+                            handleChangeRole(u, approveRole[u.id] ?? "reader")
+                          }
+                          className="rounded bg-blue-600 px-3 py-1 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+                        >
+                          승인
+                        </button>
+                        {pending[u.id] && (
+                          <span className="text-xs text-gray-400">
+                            처리 중...
+                          </span>
+                        )}
+                        {fb && (
+                          <span
+                            className={`text-xs ${fb.type === "ok" ? "text-green-600 dark:text-green-400" : "text-red-500"}`}
+                          >
+                            {fb.msg}
+                          </span>
+                        )}
+                      </div>
                     ) : (
                       <div className="flex items-center gap-2">
                         <select

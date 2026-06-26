@@ -57,6 +57,17 @@ export default async function AdminPage() {
           </Link>
         )}
 
+        {/* superadmin: 가입 승인 */}
+        {hasPermission(role, "manage_books") && (
+          <Link
+            href="/admin/super/signups"
+            className="rounded-lg border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
+          >
+            <h2 className="font-semibold">가입 승인</h2>
+            <p className="text-sm text-gray-500">신규 가입자 승인·권한 부여</p>
+          </Link>
+        )}
+
         {/* subadmin 이상: 일정 관리 */}
         {hasPermission(role, "edit_structure") && (
           <Link

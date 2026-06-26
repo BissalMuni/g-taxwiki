@@ -84,7 +84,9 @@ function LoginForm() {
         return;
       }
 
-      setMessage("회원가입 완료! 로그인해주세요.");
+      setMessage(
+        "회원가입 완료! 관리자 승인 후 콘텐츠를 이용할 수 있습니다. 승인되면 로그인해주세요."
+      );
       setTab("login");
     } catch {
       setError("서버 연결 실패");

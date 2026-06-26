@@ -6,6 +6,8 @@ import { ROLES, hasPermission, type Role } from "@/lib/auth/constants";
 /** 경로별 최소 권한 매핑 */
 const ROUTE_PERMISSIONS: { path: string; permission: string; role?: Role }[] = [
   { path: "/api/admin/rollback", permission: "rollback" },
+  { path: "/admin/super", permission: "manage_books" },
+  { path: "/api/admin/super", permission: "manage_books" },
   { path: "/admin/structure", permission: "edit_structure" },
   { path: "/api/admin/structure", permission: "edit_structure" },
   { path: "/api/admin/baskets", permission: "edit_structure" },
@@ -76,11 +78,17 @@ export async function proxy(request: NextRequest) {
   if (role) requestHeaders.set("x-user-role", role);
   if (session) requestHeaders.set("x-user-id", session.user.id);
 
-  // 콘텐츠 경로 보호 — 로그인 필수
-  if (isContentPage && !session) {
-    const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("next", pathname);
-    return NextResponse.redirect(loginUrl);
+  // 콘텐츠 경로 보호 — 로그인 + 읽기 권한 필수
+  if (isContentPage) {
+    if (!session) {
+      const loginUrl = new URL("/login", request.url);
+      loginUrl.searchParams.set("next", pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+    // 로그인했지만 아직 승인 전(pending 등)이라 읽기 권한이 없으면 승인 대기 안내로
+    if (!role || !hasPermission(role, "read")) {
+      return NextResponse.redirect(new URL("/pending", request.url));
+    }
   }
 
   // admin 경로 보호

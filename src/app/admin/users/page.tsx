@@ -17,8 +17,8 @@ export default async function AdminUsersPage() {
       <div>
         <h1 className="text-2xl font-bold">사용자 권한 관리</h1>
         <p className="mt-1 text-sm text-gray-500">
-          신규 가입자는 모두 &quot;읽기 전용&quot;으로 시작합니다. 여기서 사용자의
-          역할을 상승·조정할 수 있습니다.
+          신규 가입자는 &quot;승인 대기&quot; 상태로 시작하며 읽기 권한이
+          없습니다. 여기서 승인(역할 부여)하거나 역할을 조정할 수 있습니다.
         </p>
       </div>
 

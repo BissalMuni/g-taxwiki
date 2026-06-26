@@ -1,5 +1,6 @@
 /** 역할 목록 (권한 낮은 순서) */
 export const ROLES = [
+  "pending",
   "reader",
   "editor",
   "subadmin",
@@ -11,6 +12,8 @@ export type Role = (typeof ROLES)[number];
 
 /** 역할별 권한 */
 export const ROLE_PERMISSIONS: Record<Role, readonly string[]> = {
+  // 승인 대기 — 읽기조차 불가. 관리자 승인 후 reader 이상으로 상승.
+  pending: [],
   reader: ["read"],
   editor: ["read", "edit_content"],
   subadmin: ["read", "edit_content", "edit_structure"],
@@ -20,6 +23,7 @@ export const ROLE_PERMISSIONS: Record<Role, readonly string[]> = {
 
 /** 역할별 한국어 라벨 */
 export const ROLE_LABELS: Record<Role, string> = {
+  pending: "승인 대기",
   reader: "읽기 전용",
   editor: "편집자",
   subadmin: "부관리자",
