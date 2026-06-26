@@ -56,11 +56,12 @@ export default function RateHouse() {
   return (
     <div className="space-y-8">
       <CalcBox title="■ 일반 주택 — 4단계 초과누진">
-        <p className="text-muted">
-          주택별로 아래 세율을 적용한다. 2인 이상 공동소유이거나 토지·건물 소유자가 다른 경우, 토지·건물 가액을 합산한
+        <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
+          <li>주택별로 아래 세율을 적용한다.</li>
+          <li>2인 이상 공동소유이거나 토지·건물 소유자가 다른 경우, 토지·건물 가액을 합산한
           과세표준에 「그 밖의 주택」 세율(
-          <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>§111①3호 나목</a>)을 적용한다.
-        </p>
+          <a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>§111①3호 나목</a>)을 적용한다.</li>
+        </ul>
         <RateTable rows={standard} head="세 율" />
       </CalcBox>
 
@@ -97,16 +98,20 @@ export default function RateHouse() {
         </SubSection>
 
         <SubSection title="● 인구감소지역의 범위">
-          <p>
-            「<a href="https://www.law.go.kr/법령/인구감소지역지원특별법" target="_blank" rel="noreferrer" style={lnk}>인구감소지역 지원 특별법</a>」
-            {" "}§2② 및 행정안전부 고시에 따라 지정한다.
-            다음 지역은 <strong>인구감소지역에서 제외</strong>되므로 주택 수 산정 혜택이 적용되지 않는다
-            (<a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>지법 §111의2③</a> 2의2호):
-          </p>
           <ul style={{ margin: "6px 0", paddingLeft: "1.2em", lineHeight: 1.9 }}>
-            <li>수도권 전역 — 서울특별시·인천광역시·경기도 (<a href="https://www.law.go.kr/법령/수도권정비계획법" target="_blank" rel="noreferrer" style={lnk}>수도권정비계획법 §2①</a>)</li>
-            <li>특례시 — 수원·고양·용인·창원 등 인구 100만 이상 도시 (<a href="https://www.law.go.kr/법령/지방자치법" target="_blank" rel="noreferrer" style={lnk}>지방자치법 §198</a>)</li>
-            <li>광역시 소속 구(區) 지역 <span style={{ fontSize: "12px", color: "#888" }}>(단, 광역시 소속 군(郡)은 포함됨)</span></li>
+            <li>
+              「<a href="https://www.law.go.kr/법령/인구감소지역지원특별법" target="_blank" rel="noreferrer" style={lnk}>인구감소지역 지원 특별법</a>」
+              {" "}§2② 및 행정안전부 고시에 따라 지정한다.
+            </li>
+            <li>
+              다음 지역은 <strong>인구감소지역에서 제외</strong>되므로 주택 수 산정 혜택이 적용되지 않는다
+              (<a href="https://www.law.go.kr/법령/지방세법" target="_blank" rel="noreferrer" style={lnk}>지법 §111의2③</a> 2의2호):
+              <ul style={{ margin: "4px 0", paddingLeft: "1.2em" }}>
+                <li>수도권 전역 — 서울특별시·인천광역시·경기도 (<a href="https://www.law.go.kr/법령/수도권정비계획법" target="_blank" rel="noreferrer" style={lnk}>수도권정비계획법 §2①</a>)</li>
+                <li>특례시 — 수원·고양·용인·창원 등 인구 100만 이상 도시 (<a href="https://www.law.go.kr/법령/지방자치법" target="_blank" rel="noreferrer" style={lnk}>지방자치법 §198</a>)</li>
+                <li>광역시 소속 구(區) 지역 <span style={{ fontSize: "12px", color: "#888" }}>(단, 광역시 소속 군(郡)은 포함됨)</span></li>
+              </ul>
+            </li>
           </ul>
           <p style={{ fontSize: "12px", color: "#888", marginTop: "6px" }}>
             ※ 구체적인 지정 시·군 목록은 행정안전부 고시(인구감소지역 지정·고시) 참조.
