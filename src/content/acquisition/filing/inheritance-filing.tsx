@@ -98,7 +98,9 @@ export default function InheritanceFilingV10() {
 
       <hr className="my-6" />
 
-      <CalcBox title="■ 1가구1주택 상속감면" id="3.-1가구1주택-상속감면">
+      <CalcBox title="■ 1가구1주택 상속감면 (지방세법 제15조)" id="3.-1가구1주택-상속감면">
+
+      <p className="text-sm text-gray-500 mb-3">근거: <a href="https://law.go.kr/법령/지방세법/제15조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">지방세법 제15조 (법제처)</a></p>
 
       <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
       <thead>
@@ -166,6 +168,78 @@ export default function InheritanceFilingV10() {
 
       <p>→ 각각 상속인과 같은 세대별 주민등록표에 기재되어 있지 않아도 <strong>포함하여 판단</strong></p>
       <p>→ <strong>동거인은 제외</strong></p>
+
+      </SubSection>
+
+      <SubSection title="● 공동소유·부속토지 소유 시 판단 (제29조 ②항)">
+
+      <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
+      <thead>
+      <tr style={{backgroundColor: '#f0f0f0'}}>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>구분</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>판단</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>1주택을 여러 사람이 공동소유</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>공동소유자 각각 1주택 소유로 봄</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주택의 부속토지만 소유</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주택을 소유한 것으로 봄</td>
+      </tr>
+      </tbody>
+      </table>
+
+      <Insight>
+      <p>상속인의 기존 주택수 산정 시, 공동지분이나 부속토지만 있어도 <strong>"주택 보유"로 카운트</strong>되므로 1가구1주택 감면 판정에 주의</p>
+      </Insight>
+
+      </SubSection>
+
+      <SubSection title="● 공동상속 시 주택 소유자 판정 (제29조 ③항)">
+
+      <p>1주택을 여러 명이 공동상속받는 경우, 아래 순서로 <strong>단 한 명</strong>을 소유자로 봄</p>
+
+      <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
+      <thead>
+      <tr style={{backgroundColor: '#f0f0f0'}}>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '120px'}}>순위</th>
+      <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>기준</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>1순위</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>지분이 가장 큰 상속인</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>2순위 (지분이 같으면)</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>그 주택에 거주하는 사람</td>
+      </tr>
+      <tr>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>3순위 (거주자도 같으면)</td>
+      <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>나이가 가장 많은 사람</td>
+      </tr>
+      </tbody>
+      </table>
+
+      <Insight>
+      <p><strong>실무 포인트</strong></p>
+      <ul className="list-disc pl-6 mt-2 space-y-1">
+        <li>소유자로 판정된 상속인 → 그 주택을 본인 주택수에 <strong>포함</strong></li>
+        <li>나머지 공동상속인 → 해당 상속분은 주택수에서 <strong>제외</strong></li>
+        <li>소유자로 판정되지 않은 공동상속인은 다른 주택이 없다면 <strong>1가구1주택 감면 적용 가능 여지</strong></li>
+      </ul>
+      </Insight>
+
+      <p className="mt-4"><strong>📌 적용 예시</strong> — 부친 사망으로 자녀 3명(A, B, C)이 주택 1채를 각 1/3씩 공동상속</p>
+      <ul className="list-disc pl-6 my-2 space-y-1" style={{fontSize: 'var(--content-font-size, 13px)'}}>
+        <li>지분 동일 → 2순위 적용</li>
+        <li>A가 해당 주택에 거주 중 → A가 소유자로 판정</li>
+        <li>B, C는 다른 주택이 없다면 본인 명의 무주택자로 판단 가능</li>
+      </ul>
 
       </SubSection>
 
