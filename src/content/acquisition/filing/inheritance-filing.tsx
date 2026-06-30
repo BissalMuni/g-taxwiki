@@ -171,7 +171,9 @@ export default function InheritanceFilingV10() {
 
       </SubSection>
 
-      <SubSection title="● 공동소유·부속토지 소유 시 판단 (제29조 ②항)">
+      <SubSection title="● 공동소유·부속토지 소유 시 판단 (시행령 제29조 ②항)">
+
+      <p className="text-sm text-gray-500 mb-3">근거: <a href="https://law.go.kr/법령/지방세법시행령/제29조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">지방세법 시행령 제29조 (법제처)</a></p>
 
       <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginBottom: '16px'}}>
       <thead>
@@ -198,7 +200,9 @@ export default function InheritanceFilingV10() {
 
       </SubSection>
 
-      <SubSection title="● 공동상속 시 주택 소유자 판정 (제29조 ③항)">
+      <SubSection title="● 공동상속 시 주택 소유자 판정 (시행령 제29조 ③항)">
+
+      <p className="text-sm text-gray-500 mb-3">근거: <a href="https://law.go.kr/법령/지방세법시행령/제29조" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">지방세법 시행령 제29조 (법제처)</a></p>
 
       <p>1주택을 여러 명이 공동상속받는 경우, 아래 순서로 <strong>단 한 명</strong>을 소유자로 봄</p>
 
