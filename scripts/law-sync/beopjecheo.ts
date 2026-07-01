@@ -26,6 +26,26 @@ export function getOC(): string {
   return oc;
 }
 
+const UA =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
+
+/** UA 헤더 + 재시도 포함 JSON GET */
+async function fetchJson(url: string, tries = 3): Promise<any> {
+  let lastErr: unknown;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url, {
+        headers: { 'User-Agent': UA, Accept: 'application/json,*/*', 'Accept-Language': 'ko' },
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+}
+
 export interface LawRecord {
   법령ID: string;
   mst: string;
@@ -41,9 +61,7 @@ export async function lookupLaw(oc: string, name: string): Promise<LawRecord | n
   const url = `https://www.law.go.kr/DRF/lawSearch.do?OC=${encodeURIComponent(
     oc,
   )}&target=law&type=JSON&display=100&query=${encodeURIComponent(name)}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${name}`);
-  const j: any = await res.json();
+  const j: any = await fetchJson(url);
   const rows: any[] = j?.LawSearch?.law ? [].concat(j.LawSearch.law) : [];
   const exact = rows.find((r) => norm(r.법령명한글) === norm(name));
   const pick = exact ?? rows[0];
@@ -73,9 +91,7 @@ export async function fetchAmendReason(oc: string, mst: string): Promise<string>
   const url = `https://www.law.go.kr/DRF/lawService.do?OC=${encodeURIComponent(
     oc,
   )}&target=law&MST=${encodeURIComponent(mst)}&type=JSON`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for MST ${mst}`);
-  const j: any = await res.json();
+  const j: any = await fetchJson(url);
   const lines = pullStrings(j?.법령?.제개정이유).filter((s) => s && s.trim());
   return lines.join('\n').trim();
 }
@@ -85,9 +101,7 @@ export async function fetchArticle(oc: string, mst: string, jo: string): Promise
   const url = `https://www.law.go.kr/DRF/lawService.do?OC=${encodeURIComponent(
     oc,
   )}&target=law&MST=${encodeURIComponent(mst)}&JO=${encodeURIComponent(jo)}&type=JSON`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for MST ${mst} JO ${jo}`);
-  const j: any = await res.json();
+  const j: any = await fetchJson(url);
   let u = j?.법령?.조문?.조문단위;
   u = u ? [].concat(u) : [];
   return pullStrings(u).filter((s) => s && s.trim()).join('\n').trim();
