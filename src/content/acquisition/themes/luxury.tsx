@@ -116,6 +116,11 @@ export default function LuxuryV10() {
           </ul>
           </Insight>
         </SubSection>
+
+        <SubSection title="● 구분취득 판단기준">
+          <p>골프장·고급주택·고급오락장·고급선박을 <strong>2명 이상이 구분하여 취득</strong>하거나 <strong>1명 또는 여러 명이 시차를 두고 구분하여 취득</strong>하는 경우도 전체를 하나의 사치성재산으로 보아 중과세율을 적용한다.</p>
+          <p className="text-sm text-muted">시행령 §28①</p>
+        </SubSection>
       </CalcBox>
 
       <SectionNav sections={[
@@ -702,6 +707,43 @@ export default function LuxuryV10() {
           </tr>
           </tbody>
           </table>
+
+          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)', marginTop: '12px'}}>
+          <thead>
+          <tr style={{backgroundColor: '#f0f0f0'}}>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '10%'}}>번호</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '25%'}}>시설물</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>세부 기준</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>①</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>카지노장</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>「관광진흥법」에 따라 허가된 <strong>외국인전용 카지노장은 제외</strong></td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>②</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>자동도박기 설치 장소</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>파친코, 슬롯머신, 아케이드 이퀴프먼트 등</td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>③</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>특수목욕장 미용실</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>미용시설 외에 욕실 등을 부설한 장소</td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>④</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>유흥주점영업장</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>
+          영업장 면적(공용면적 포함) <span style={{color: '#cf1322', fontWeight: 'bold'}}>100㎡ 초과</span>인 경우로서<br/>
+          • 무도장을 설치한 영업장소(카바레·나이트클럽·디스코클럽 등), 또는<br/>
+          • 유흥접객원을 두고 반영구 구획 객실 면적이 전용면적의 50% 이상이거나 객실 수 5개 이상인 영업장소(룸살롱·요정 등)
+          </td>
+          </tr>
+          </tbody>
+          </table>
+          <p className="text-sm text-muted">시행령 §28⑤</p>
         </SubSection>
 
         <SubSection title="● 고급선박">
@@ -718,17 +760,27 @@ export default function LuxuryV10() {
           <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>비업무용으로 사용하는 자가용 선박</td>
           </tr>
           <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>대상 기준</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>시가표준액 <span style={{color: '#cf1322', fontWeight: 'bold'}}>3억원 초과</span> 선박</td>
+          </tr>
+          <tr>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>제외 대상</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>실험·실습 등의 용도에 사용할 목적으로 취득하는 선박</td>
+          </tr>
+          <tr>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>중과세율</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', color: '#cf1322', fontWeight: 'bold'}}>10&#126;11% (2&#126;3% + 8%)</td>
           </tr>
           </tbody>
           </table>
+          <p className="text-sm text-muted">시행령 §28⑥</p>
 
           <Insight>
           <ul className="list-disc pl-6 my-4 space-y-1">
             <li><strong>별장</strong>으로 판단되면 상시 주거 사실을 입증하지 못하는 한 중과 적용</li>
             <li><strong>골프장</strong>은 회원제에 한하여 중과되며, 대중골프장은 제외</li>
             <li><strong>고급오락장</strong>은 영업 허가·신고 내용이 아닌 실제 사용 용도를 기준으로 판단</li>
+            <li><strong>고급선박</strong>은 시가표준액 3억원 초과가 기준이며, 실험·실습용 선박은 제외</li>
           </ul>
           </Insight>
         </SubSection>
