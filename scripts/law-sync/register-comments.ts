@@ -14,11 +14,13 @@
  *   npx tsx scripts/law-sync/register-comments.ts --apply --limit=3
  * 필요: .env.local 의 BEOPJECHEO_OC, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
  */
+import fs from 'node:fs';
 import path from 'node:path';
 import { loadEnv } from './beopjecheo';
 import { detectChanges, type Change } from './check-amendments';
 
 const CONTENT_ROOT = 'src/content/';
+const BASELINE = path.join(process.cwd(), 'src', 'lib', 'law-sync', 'law-baseline.json');
 
 /** 파일 경로 → 문서 content_path (topic-page.tsx 와 동일 규칙: /{basePath}/{slugs}) */
 function fileToContentPath(file: string): string | null {
@@ -138,8 +140,13 @@ async function main() {
   const env = supaEnv();
   let done = 0;
   let skipped = 0;
+  let truncated = false;
+  const errByLaw = new Map<string, number>();
   for (const t of targets) {
-    if (done >= limit) break;
+    if (done >= limit) {
+      truncated = true;
+      break;
+    }
     try {
       if (await alreadyRegistered(env, t.contentPath, marker(t.c))) {
         skipped++;
@@ -149,10 +156,29 @@ async function main() {
       done++;
       console.log(`  ✓ ${t.contentPath}  (${t.c.law})`);
     } catch (e) {
+      errByLaw.set(t.c.law, (errByLaw.get(t.c.law) ?? 0) + 1);
       console.log(`  ✗ ${t.contentPath}  (${t.c.law}) — ${(e as Error).message}`);
     }
   }
   console.log(`\n등록 ${done}건 / 중복 skip ${skipped}건`);
+
+  // baseline 갱신: 전량 처리 + 실제 개정(공포번호 변화) + 해당 법령 등록 오류 0 → 현행 레코드로 advance
+  if (truncated) {
+    console.log('baseline 갱신 생략(--limit 로 일부만 처리).');
+    return;
+  }
+  const bl = JSON.parse(fs.readFileSync(BASELINE, 'utf8'));
+  const advanced: string[] = [];
+  for (const c of changes) {
+    if (c.to === c.from) continue; // 실제 변화 아님(시뮬 등)
+    if ((errByLaw.get(c.law) ?? 0) > 0) continue; // 오류 있으면 다음 회차 재시도
+    bl.laws[c.law] = c.record;
+    advanced.push(c.law);
+  }
+  if (advanced.length) {
+    fs.writeFileSync(BASELINE, JSON.stringify(bl, null, 2) + '\n', 'utf8');
+    console.log(`baseline 갱신: ${advanced.join(', ')}`);
+  }
 }
 
 main();

@@ -1,0 +1,45 @@
+name: Law Sync (법령 개정 감지)
+
+# 문서가 참조하는 법령의 개정 여부를 법제처에서 확인하고,
+# 개정 시 영향 문서에 "개정 반영 요청" 코멘트를 등록한다.
+# 등록된 코멘트는 별도 cron 인 review-feedback 워크플로가 Claude 로 반영한다.
+on:
+  schedule:
+    - cron: '0 21 1 * *' # 매월 1일 21:00 UTC (KST 익일 06:00) — 당일 review-feedback(23:17 UTC~) 이전
+  workflow_dispatch: {}
+
+jobs:
+  law-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install -g pnpm && pnpm install --frozen-lockfile --ignore-scripts
+
+      # 감지 + 코멘트 등록 + baseline advance (개정 없으면 0건, baseline 무변화)
+      - name: Detect amendments & register comments
+        env:
+          BEOPJECHEO_OC: ${{ secrets.BEOPJECHEO_OC }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npx tsx scripts/law-sync/register-comments.ts --apply
+
+      # baseline 이 갱신됐으면 커밋
+      - name: Commit baseline if changed
+        run: |
+          if [ -n "$(git status --porcelain src/lib/law-sync/law-baseline.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add src/lib/law-sync/law-baseline.json
+            git commit -m "chore(law-sync): advance law baseline after amendment detection"
+            git push
+          else
+            echo "baseline 변화 없음 — 커밋 생략"
+          fi

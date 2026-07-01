@@ -15,7 +15,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { scanLawRefs } from './scan-law-refs';
-import { getOC, lookupLaw, fetchAmendReason } from './beopjecheo';
+import { getOC, lookupLaw, fetchAmendReason, type LawRecord } from './beopjecheo';
 
 const BASELINE = path.join(process.cwd(), 'src', 'lib', 'law-sync', 'law-baseline.json');
 
@@ -29,6 +29,7 @@ export interface Change {
   시행일자: string;
   files: string[];
   reason: string;
+  record: LawRecord; // 현행 법령 레코드 (baseline 갱신용)
 }
 
 export interface DetectOptions {
@@ -86,6 +87,7 @@ export async function detectChanges(
       시행일자: cur.시행일자,
       files: reverse.get(law) ?? [],
       reason,
+      record: cur,
     });
   }
 
