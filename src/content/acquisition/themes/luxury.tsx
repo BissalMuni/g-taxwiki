@@ -193,7 +193,9 @@ export default function LuxuryV10() {
 
       <hr className="my-6" />
 
-      <CalcBox title="■ 면적기준 ([시행령 §28④](https://www.law.go.kr/법령/지방세법시행령/제28조))" id="면적기준">
+      <CalcBox title="■ 면적기준 (시행령 §28④)" id="면적기준">
+        <p className="text-sm text-muted">근거: <a href="https://www.law.go.kr/법령/지방세법시행령/제28조" target="_blank" className="text-blue-600 hover:underline">지방세법 시행령 제28조 제4항</a></p>
+
         <Insight>
         <p><strong>중요</strong>: 건축물대장상 전용면적이 아니라 <strong>실제 현황</strong>이 기준이다.</p>
         </Insight>
