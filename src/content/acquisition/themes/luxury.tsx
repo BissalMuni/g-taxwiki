@@ -10,7 +10,7 @@ import { CalcBox, SubSection, Insight } from "@/components/content/shared";
  *   category: "취득세"
  *   subcategory: "중과규정"
  *   audience: "internal"
- *   lastUpdated: "2026-02-08"
+ *   lastUpdated: "2026-07-01"
  *   status: "draft"
  *   lawReference: "지방세법 §13⑤, 시행령 §28"
  *   tags: ["사치성재산", "중과", "별장", "골프장", "고급주택", "고급오락장", "고급선박", "중과세율", "면적기준", "시설기준", "전용면적", "벽체면적"]
@@ -142,13 +142,13 @@ export default function LuxuryV10() {
       <CalcBox title="■ 고급주택 요건" id="고급주택요건">
         <SubSection title="● 법적 근거">
           <ul className="list-disc pl-6 my-4 space-y-1">
-            <li><a href="https://www.law.go.kr/법령/지방세법/제12조" className="text-blue-600 hover:underline"><strong>지방세법</strong> 제12조 제5항 제3호</a></li>
+            <li><a href="https://www.law.go.kr/법령/지방세법/제13조" className="text-blue-600 hover:underline"><strong>지방세법</strong> 제13조 제5항 제3호</a></li>
             <li><a href="https://www.law.go.kr/법령/지방세법시행령/제28조" className="text-blue-600 hover:underline"><strong>지방세법 시행령</strong> 제28조</a></li>
           </ul>
         </SubSection>
 
         <SubSection title="● 판단 기준">
-          <p>고급주택 여부는 다음 <strong>두 가지 기준</strong> 중 하나에 해당하면 고급주택으로 본다.</p>
+          <p><strong>2026. 7. 1. 개정</strong> 지방세법 제13조제5항제3호에 따라, 고급주택은 주거용 건축물 또는 그 부속토지의 <strong>면적과 가액</strong>이 대통령령으로 정하는 기준을 초과하는 경우로 한정한다.</p>
 
           <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)'}}>
           <thead>
@@ -159,12 +159,12 @@ export default function LuxuryV10() {
           </thead>
           <tbody>
           <tr>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>면적기준</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주거용 건축물 또는 그 부속토지의 면적과 가액이 일정 기준을 초과하는 경우</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>면적 기준</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>주거용 건축물의 연면적·대지면적 또는 공동주택 전용면적이 일정 기준을 초과 (아래 <strong>면적기준</strong> 참조)</td>
           </tr>
           <tr>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>시설기준</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>특정 부대시설(수영장, 엘리베이터 등)이 설치된 단독주택</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>가액 기준</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>취득 당시 시가표준액 <span style={{color: '#cf1322', fontWeight: 'bold'}}>9억원 초과</span></td>
           </tr>
           </tbody>
           </table>
@@ -275,48 +275,16 @@ export default function LuxuryV10() {
 
       <hr className="my-6" />
 
-      <CalcBox title="■ 시설기준 ([시행령 §28④](https://www.law.go.kr/법령/지방세법시행령/제28조))" id="시설기준">
-        <SubSection title="● 적용 대상">
-          <p>아래의 시설물이 설치된 <strong>단독주택</strong>(공동주택과 그 부속토지는 제외)은 고급주택으로 본다. 단, <strong>시가표준액 9억원 초과 요건이 시설물 종류에 따라 다르게 적용</strong>된다.</p>
-        </SubSection>
-
-        <SubSection title="● 해당 시설물">
-          <table style={{width: '100%', borderCollapse: 'collapse', fontSize: 'var(--content-font-size, 13px)'}}>
-          <thead>
-          <tr style={{backgroundColor: '#f0f0f0'}}>
-          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '10%'}}>번호</th>
-          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '20%'}}>시설물</th>
-          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '25%'}}>세부 기준</th>
-          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>9억원 초과 요건</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>①</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>엘리베이터</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>적재하중 <span style={{color: '#cf1322', fontWeight: 'bold'}}>200kg 초과</span></td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#1890ff', fontWeight: 'bold'}}>적용됨</td>
-          </tr>
-          <tr>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>②</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>에스컬레이터</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>-</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>미적용</td>
-          </tr>
-          <tr>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>③</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>수영장</td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><span style={{color: '#cf1322', fontWeight: 'bold'}}>67㎡ 이상</span></td>
-          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>미적용</td>
-          </tr>
-          </tbody>
-          </table>
+      <CalcBox title="■ 시설기준 (2026. 7. 1. 폐지)" id="시설기준">
+        <SubSection title="● 시설기준 폐지 경과">
+          <p>종전에는 단독주택에 <strong>수영장(67㎡ 이상)·에스컬레이터·엘리베이터(적재하중 200kg 초과)</strong> 등 부대시설이 설치된 경우에도 고급주택으로 보았다(구 지방세법 시행령 §28④ 제2호의2·제3호).</p>
+          <p><strong>2026. 7. 1. 시행 개정</strong>(법률 제21308호)으로 <a href="https://www.law.go.kr/법령/지방세법/제13조" target="_blank" className="text-blue-600 hover:underline">지방세법 제13조제5항제3호</a>의 고급주택 정의가 <strong>"면적과 가액"</strong> 기준만 대통령령에 위임하도록 개정되면서, <strong>시설 기준의 법률 위임 근거가 삭제</strong>되었다.</p>
 
           <Insight>
+          <p><strong>실무 적용</strong></p>
           <ul className="list-disc pl-6 my-4 space-y-1">
-            <li>적재하중 <strong>200kg 이하</strong>의 소형 엘리베이터는 고급주택 판단 기준에서 <strong>제외</strong>된다.</li>
-            <li><strong>엘리베이터</strong> 기준만 취득 당시 시가표준액 <strong>9억원 초과</strong> 요건이 함께 적용된다(시행령 §28④ 단서 — 제1호·제2호·제2호의2·제4호에 한정).</li>
-            <li><strong>에스컬레이터·수영장</strong> 기준(제3호)은 시행령 §28④ 단서에서 제외되어 있어, 시가표준액과 무관하게 시설물 설치 사실만으로 고급주택에 해당한다.</li>
+            <li>시행령 §28④ 제2호의2·제3호(엘리베이터·에스컬레이터·수영장) 문구는 현재 시행령에 남아 있으나, 이는 상위법 개정에 따른 <strong>시행령 미정비(입법지연)</strong>일 뿐 <strong>위임 근거를 상실하여 효력이 없다</strong>.</li>
+            <li>따라서 <strong>2026. 7. 1. 이후 취득분</strong>은 시설 설치 여부와 무관하게 <strong>면적·가액 기준</strong>으로만 고급주택 여부를 판단한다.</li>
           </ul>
           </Insight>
         </SubSection>
@@ -822,7 +790,7 @@ export default function LuxuryV10() {
         <tr>
         <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', backgroundColor: '#fafafa'}}>근거법</td>
         <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법" target="_blank">지방세법</a></td>
-        <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법/제12조" target="_blank">§12⑤③</a></td>
+        <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><a href="https://www.law.go.kr/법령/지방세법/제13조" target="_blank">§13⑤③</a></td>
         <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>고급주택 중과세율</td>
         </tr>
         <tr>
@@ -940,12 +908,12 @@ export default function LuxuryV10() {
         </details>
 
         <details>
-        <summary>Q. 엘리베이터 적재하중은 어디서 확인하나요?</summary>
+        <summary>Q. 수영장·엘리베이터 등 시설이 있으면 고급주택인가요?</summary>
 
         <ul className="list-disc pl-6 my-4 space-y-1">
-          <li>엘리베이터 검사증명서 확인</li>
-          <li>한국승강기안전공단(www.kesi.or.kr)에서 조회 가능</li>
-          <li>적재하중 <strong>200kg 이하</strong>는 고급주택 판단 기준에서 제외</li>
+          <li><strong>2026. 7. 1. 이후 취득분은 시설 기준이 적용되지 않습니다.</strong></li>
+          <li>개정 지방세법 제13조제5항제3호가 고급주택을 <strong>면적·가액 기준</strong>으로만 정하도록 위임하면서, 수영장·엘리베이터·에스컬레이터 등 시설 기준의 법률 위임 근거가 삭제되었습니다.</li>
+          <li>시행령 §28④에 시설 문구가 남아 있으나 위임 근거 상실로 효력이 없습니다(시행령 미정비).</li>
         </ul>
 
         </details>
