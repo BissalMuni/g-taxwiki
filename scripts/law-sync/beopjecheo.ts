@@ -4,8 +4,14 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import dns from 'node:dns';
+
+// GH Actions 러너에서 law.go.kr 의 IPv6/DNS 해석이 불안정 → IPv4 우선 (curl 은 정상)
+dns.setDefaultResultOrder('ipv4first');
 
 export const norm = (s: string) => s.replace(/\s+/g, '');
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** .env.local 로더 (tsx 는 자동 로드 안 함) */
 export function loadEnv(): Record<string, string> {
@@ -29,18 +35,20 @@ export function getOC(): string {
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 
-/** UA 헤더 + 재시도 포함 JSON GET */
-async function fetchJson(url: string, tries = 3): Promise<any> {
+/** UA 헤더 + 지연 재시도 포함 JSON GET (GH Actions DNS 불안정 대응) */
+async function fetchJson(url: string, tries = 5): Promise<any> {
   let lastErr: unknown;
   for (let i = 0; i < tries; i++) {
     try {
       const res = await fetch(url, {
         headers: { 'User-Agent': UA, Accept: 'application/json,*/*', 'Accept-Language': 'ko' },
+        signal: AbortSignal.timeout(30_000),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.json();
     } catch (e) {
       lastErr = e;
+      if (i < tries - 1) await sleep(2000); // DNS/연결 flaky → 지연 후 재시도
     }
   }
   throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
