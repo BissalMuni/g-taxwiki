@@ -134,7 +134,7 @@ export default function LuxuryV10() {
 
       <hr className="my-6" />
 
-      <CalcBox title="■ 고급주택 요건 ([법 §12⑤③](https://www.law.go.kr/법령/지방세법/제12조), [시행령 §28](https://www.law.go.kr/법령/지방세법시행령/제28조))" id="고급주택요건">
+      <CalcBox title="■ 고급주택 요건" id="고급주택요건">
         <SubSection title="● 법적 근거">
           <ul className="list-disc pl-6 my-4 space-y-1">
             <li><a href="https://www.law.go.kr/법령/지방세법/제12조" className="text-blue-600 hover:underline"><strong>지방세법</strong> 제12조 제5항 제3호</a></li>
@@ -272,7 +272,7 @@ export default function LuxuryV10() {
 
       <CalcBox title="■ 시설기준 ([시행령 §28④](https://www.law.go.kr/법령/지방세법시행령/제28조))" id="시설기준">
         <SubSection title="● 적용 대상">
-          <p><strong>단독주택</strong> + 아래의 시설물 설치 + <strong>취득 당시의 시가표준액 9억원 초과</strong></p>
+          <p>아래의 시설물이 설치된 <strong>단독주택</strong>(공동주택과 그 부속토지는 제외)은 고급주택으로 본다. 단, <strong>시가표준액 9억원 초과 요건이 시설물 종류에 따라 다르게 적용</strong>된다.</p>
         </SubSection>
 
         <SubSection title="● 해당 시설물">
@@ -280,8 +280,9 @@ export default function LuxuryV10() {
           <thead>
           <tr style={{backgroundColor: '#f0f0f0'}}>
           <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '10%'}}>번호</th>
-          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '25%'}}>시설물</th>
-          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>세부 기준</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '20%'}}>시설물</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold', width: '25%'}}>세부 기준</th>
+          <th style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>9억원 초과 요건</th>
           </tr>
           </thead>
           <tbody>
@@ -289,22 +290,29 @@ export default function LuxuryV10() {
           <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>①</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>엘리베이터</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>적재하중 <span style={{color: '#cf1322', fontWeight: 'bold'}}>200kg 초과</span></td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#1890ff', fontWeight: 'bold'}}>적용됨</td>
           </tr>
           <tr>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>②</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>에스컬레이터</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px'}}>-</td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>미적용</td>
           </tr>
           <tr>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', backgroundColor: '#fafafa'}}>③</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px', fontWeight: 'bold'}}>수영장</td>
           <td style={{border: '1px solid #d9d9d9', padding: '8px'}}><span style={{color: '#cf1322', fontWeight: 'bold'}}>67㎡ 이상</span></td>
+          <td style={{border: '1px solid #d9d9d9', padding: '8px', textAlign: 'center', color: '#cf1322', fontWeight: 'bold'}}>미적용</td>
           </tr>
           </tbody>
           </table>
 
           <Insight>
-          <p>적재하중 <strong>200kg 이하</strong>의 소형 엘리베이터는 고급주택 판단 기준에서 <strong>제외</strong>된다.</p>
+          <ul className="list-disc pl-6 my-4 space-y-1">
+            <li>적재하중 <strong>200kg 이하</strong>의 소형 엘리베이터는 고급주택 판단 기준에서 <strong>제외</strong>된다.</li>
+            <li><strong>엘리베이터</strong> 기준만 취득 당시 시가표준액 <strong>9억원 초과</strong> 요건이 함께 적용된다(시행령 §28④ 단서 — 제1호·제2호·제2호의2·제4호에 한정).</li>
+            <li><strong>에스컬레이터·수영장</strong> 기준(제3호)은 시행령 §28④ 단서에서 제외되어 있어, 시가표준액과 무관하게 시설물 설치 사실만으로 고급주택에 해당한다.</li>
+          </ul>
           </Insight>
         </SubSection>
       </CalcBox>
