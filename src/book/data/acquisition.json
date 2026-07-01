@@ -186,6 +186,18 @@
       ]
     },
     {
+      "id": "acq-gwapyo",
+      "slug": "gwapyo",
+      "title": "과세표준",
+      "children": [
+        {
+          "id": "acq-gwapyo-siga-injeong-aek",
+          "slug": "siga-injeong-aek",
+          "title": "시가인정액"
+        }
+      ]
+    },
+    {
       "id": "acq-gaesu",
       "slug": "gaesu",
       "title": "개수",
